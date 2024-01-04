@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경 설정</title>
+    <style>
+      div {
+        margin-bottom: 20px;
+        border: 20px double green;
+        /* border-radius: 100%; */
+        /* padding: 20px; */
+
+        background-color: pink;
+        /* background-clip: border-box; */
+        background-clip: content-box;
+      }
+
+      .box1 {
+        width: 60px;
+        height: 60px;
+        /* border-radius: 100%; */
+        padding: 20px;
+
+        background-color: pink;
+        /* background-clip: border-box; */
+        background-clip: content-box;
+      }
+      .box2 {
+        width: 60px;
+        height: 60px;
+        /* border-radius: 100%; */
+        padding: 20px;
+
+        background-color: pink;
+        /* background-clip: border-box; */
+        background-clip: padding-box;
+      }
+      .box3 {
+        width: 60px;
+        height: 60px;
+        /* border-radius: 100%; */
+        padding: 20px;
+
+        background-color: pink;
+        background-clip: border-box;
+        /* background-clip: content-box; */
+      }
+      .box4 {
+        width: 300px;
+        height: 300px;
+        /* border-radius: 100%; */
+        padding: 20px;
+
+        background-color: pink;
+        /* background-clip: border-box; */
+        background-image: url(puppy_01.jpg);
+        background-size: 100px 100px;
+        /* 사진크기보다 배경의 넓이가 크면 사진을 x방향으로 반복한다 */
+        /* background-repeat: repeat-x; */
+        background-repeat: no-repeat;
+        /* img origin 어디서부터 시작할 지 정해줌 */
+        background-origin: content-box;
+
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">배경을 설정해 볼게요.</div>
+    <div class="box2">배경을 설정해 볼게요.</div>
+    <div class="box3">배경을 설정해 볼게요.</div>
+    <div class="box4">배경을 설정해 볼게요.</div>
+  </body>
+</html>
