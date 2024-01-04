@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+    <title>색 지정하기</title>
+    <style>
+      html {
+        font-size: 15px;
+      }
+      body {
+        font-size: 32px;
+      }
+      p#one {
+        color: rgb(100%, 0%, 0%);
+        font-size: 48px;
+        /* 100 ~ 900 */
+        font-weight: 900;
+        line-height: 16px;
+        /* 정렬 left right center justify */
+        text-align: center;
+      }
+      p#two {
+        color: rgb(0%, 0%, 100%, 0.5);
+        text-align: right;
+        /* body의 폰트 크기의 0.5배수 */
+        font-size: 0.5em;
+        font-weight: 100;
+      }
+      p#three {
+        /* margenta를 100% >> 변화없음 */
+        /* color: hsl(300, 100%, 0%); */
+
+        color: hsl(300, 50%, 50%);
+        text-align: justify;
+
+        /* root의 배수만큼을 나타냄 */
+        font-size: 3rem;
+      }
+
+      p#four {
+        /* 16진수 : 0 1 2 3 4 5 6 7 8 9 A B C D E F */
+        /* 00 ~ FF(255) => 256단계 */
+        color: #ff00ff99;
+        /* 나눔고딕을 적용해주고 없으면 sans-serif를 적용해줘 */
+        /* font-family: "Nanum Gothic", sans-serif; */
+        font-family: "Rubik Doodle Shadow", sans-serif;
+      }
+      /* 
+      hsl(hue, saturation, lightness)
+      색은 0에서 360까지의 색상환에서의 정도를 나타냅니다. 
+      0은 빨간색이고 120은 초록색, 240은 파란색입니다.
+
+      채도는 색의 선명도를 퍼센트 수치로 나타냅니다. 
+      0%는 회색이며 100%는 제일 선명한 원색의 수치입니다.
+
+      명도 또한 밝기의 단계를 퍼센트 수치로 나타냅니다. 
+      0%는 검정색이며 50%는 중간 밝기, 100%는 흰색입니다.
+       */
+    </style>
+  </head>
+  <body>
+    <p id="one">고소한 아몬드와 함께 여는 아침</p>
+    <p id="two">고소한 아몬드와 함께 여는 아침</p>
+    <p id="three">고소한 아몬드와 함께 여는 아침</p>
+    <p id="four">f 고소한 아몬드와 함께 여는 아침</p>
+  </body>
+</html>
