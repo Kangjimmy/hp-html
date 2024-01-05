@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오버플로우</title>
+
+    <style>
+      div > div {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        position: relative;
+      }
+
+      .div1 {
+        background-color: orange;
+        z-index: 4;
+        /* overflow: visible; default 값이다. */
+        /* overflow: hidden; */
+        /* overflow: scroll; */
+        overflow: auto;
+      }
+      .div2 {
+        background-color: red;
+        bottom: 50px;
+        z-index: 3;
+      }
+      .div3 {
+        background-color: purple;
+        bottom: 100px;
+        z-index: 2;
+      }
+      .div4 {
+        background-color: green;
+        bottom: 150px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- z-index: position 속성이 static이 아닌 요소에만 적용 -->
+    <div>
+      <div class="div1">
+        1 eoribneqwoihzxcvsdvasdverbndfknbdkfbdlfweubwkvjsbdv
+        renbldknfbdkfbldfkblkdnfblkerklweifoiqhwoqhwfiuyrerkgwwbdlkfdflkdlfdfdklfgdfgqwpeoqw
+        wef weffwe fw adrtr thrth rtnfg ndfgnd fgnfg r
+      </div>
+      <div class="div2">2</div>
+      <div class="div3">3</div>
+      <div class="div4">4</div>
+    </div>
+  </body>
+</html>
