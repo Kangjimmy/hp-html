@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변형과 전환</title>
+
+    <style>
+      .parent {
+        display: inline-block;
+        margin: 0 20px;
+        width: 200px;
+        height: 200px;
+        background-color: lightcoral;
+      }
+      .child {
+        width: 150px;
+        height: 150px;
+        background-color: teal;
+      }
+      /* parent 형제들 중 1번째를 선택하고 
+      그 중 내부의 child클래스를 x,y만큼 이동하도록 설정 */
+      .parent:nth-child(1) > .child {
+        transform: translate(30px, 50px);
+      }
+      /* parent 형제들 중 2번째를 선택하고 
+      그 중 내부 child클래스를 1.2배 커지도록 설정 */
+      .parent:nth-child(2) > .child {
+        transform: scale(1.2);
+      }
+      /* parent 형제들 중 3번째를 선택하고 
+      그 중 내부 child클래스를 45도 만큼 비틀도록 설정 */
+      .parent:nth-child(3) > .child {
+        transform: skew(45deg);
+      }
+      /* parent 형제들 중 4번째를 선택하고 
+      그 중 내부 child클래스를 45도 만큼 돌리도록 설정 */
+      .parent:nth-child(4) > .child {
+        transform: rotate(45deg);
+      }
+
+      .parent:nth-child(4) > .child:hover {
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+        /* transition: background-color 2s 0s linear; */
+        transition: background-color 2s 0s linear, height 2s 0s linear;
+      }
+
+      .parent:nth-child(3) > .child:hover {
+        width: 250px;
+        height: 250px;
+        background-color: yellowgreen;
+        /* 트랜지션을 적용할 속성 */
+        transition-property: width;
+        /* 몇초 후에 트랜지션을 적용할 건지 */
+        transition-delay: 1s;
+        /* 트랜지션이 몇초동안 바뀔건지 */
+        transition-duration: 3s;
+        /* transition-duration의 속도를 조절  */
+        transition-timing-function: ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
