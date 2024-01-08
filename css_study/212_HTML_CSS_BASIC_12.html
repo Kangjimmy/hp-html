@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>의사 클래스</title>
+    <style>
+      .menu {
+        padding: 10px;
+        border-bottom: 1px solid black;
+        /* list-style: none; */
+      }
+      .menu > li {
+        display: inline-block;
+        text-align: center;
+      }
+      li > a {
+        display: inline-block;
+        width: 100px;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+      }
+
+      a:hover {
+        color: white;
+        background-color: gray;
+        border-radius: 4px;
+      }
+
+      a:active {
+        color: white;
+        background-color: red;
+      }
+
+      /* 의사 클래스 
+        의사는 pseudo(가짜의, 모조의)란 뜻이다
+      */
+      li:nth-child(2n + 1) {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      li:nth-child(n) {
+        font-size: 20px;
+      }
+
+      a::first-letter {
+        color: red;
+      }
+      /* 콘텐츠 뒤에 콘텐츠 및 스타일링 추가 */
+      a::after {
+        content: "보기";
+        color: blue;
+      }
+
+      a::before {
+        content: "우리 함께~";
+        color: blueviolet;
+      }
+      /* n(모든 수)에 대해 20px 적용됨
+      li:nth-child(2n) >> 짝수 번째만 적용
+      li:nth-child(2n+1) >> 홀수 번째만 적용
+       */
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <!-- #은 현재 페이지 최상단으로 이동한다, 더미링크라고도 한다 -->
+      <li><a href="#">사전</a></li>
+      <li><a href="#">뉴스</a></li>
+      <li><a href="#">증권</a></li>
+      <li><a href="#">지도</a></li>
+    </ul>
+  </body>
+</html>
