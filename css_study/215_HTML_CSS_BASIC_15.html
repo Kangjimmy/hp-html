@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션 효과</title>
+
+    <style>
+      /* .eyes {
+        display: flex;
+      }
+      .eye {
+        border: 2px solid black;
+        width: 200px;
+        height: 200px;
+        margin: 1px;
+        border-radius: 50%;
+        position: relative;
+      }
+      .ball {
+        width: 40px;
+        height: 50px;
+        background-color: black;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      } */
+
+      .eyes {
+        width: 430px;
+        height: 640px;
+        margin: auto;
+      }
+
+      .eye {
+        width: 200px;
+        height: 200px;
+        border: 5px solid black;
+        border-radius: 100%;
+        position: relative;
+      }
+
+      .eye:nth-child(1) {
+        float: left;
+      }
+      .eye:nth-child(2) {
+        float: right;
+      }
+
+      .ball {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        border-radius: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+        animation-name: moving;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-timing-function: linear;
+        /* 무한 반복 */
+        animation-iteration-count: infinite;
+
+        /* normal : 정상 -> 정방향 */
+        /* animation-direction: normal; */
+        /* reverse : 반대 -> 역방향 */
+        /* animation-direction: reverse; */
+        animation-direction: alternate;
+      }
+
+      .ball:hover {
+        animation-play-state: paused;
+        /* animation-play-state: running; */
+      }
+
+      /* left 30px에서 left 120px으로 이동하는 프레임 설정 */
+      @keyframes moving {
+        from {
+          left: 15%;
+        }
+        to {
+          left: 85%;
+        }
+      }
+
+      p {
+        text-align: center;
+        padding-top: 230px;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="eyes">
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+      <p>⭕</p>
+    </div>
+  </body>
+</html>
