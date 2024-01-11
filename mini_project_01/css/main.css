@@ -21,3 +21,15 @@ main {
     padding: 0 1rem;
   }
 }
+
+.trade__lists {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.trade__list {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+}
