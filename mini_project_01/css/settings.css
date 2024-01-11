@@ -1,19 +1,48 @@
 * {
   box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
-body,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style: none;
+body {
+  background-color: #15171e;
+  color: #d9dadb;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+ul,
+p,
+a,
+li,
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.button__settings {
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0074e0;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button__settings:hover {
+  background-color: #188af5;
+}
+
+@media screen and (max-width: 912px) {
+  .button__settings {
+    font-size: 0.8rem;
+  }
 }
