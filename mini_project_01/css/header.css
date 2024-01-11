@@ -10,6 +10,7 @@ header {
   top: 0.5rem;
   transform: translateX(-50%);
   width: 98%;
+  z-index: 99;
 }
 
 .header__title {
@@ -42,7 +43,7 @@ header {
   }
 
   .nav__ul__li {
-    font-size: 0.9rem;
+    font-size: 0.93rem;
   }
 }
 @media screen and (max-width: 768px) {
