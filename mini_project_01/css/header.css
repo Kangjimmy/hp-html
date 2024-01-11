@@ -7,7 +7,7 @@ header {
   position: fixed;
   border-radius: 4px;
   left: 50%;
-  top: 0.5rem;
+  top: 0.7rem;
   transform: translateX(-50%);
   width: 98%;
   z-index: 99;
