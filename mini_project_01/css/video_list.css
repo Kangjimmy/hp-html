@@ -1,0 +1,75 @@
+/* video list table */
+
+thead,
+th,
+td,
+h2 {
+  cursor: default;
+}
+
+.list__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+}
+
+.list__table {
+  font-size: 1rem;
+  width: 80%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.list__table a {
+  color: #ccc;
+}
+
+.list__table a:hover {
+  text-decoration: underline;
+}
+
+.list__table .th-num {
+  width: 5rem;
+  text-align: center;
+}
+
+.list__table .th-date {
+  width: 10rem;
+}
+
+.list__table th,
+.list__table td {
+  padding: 14px 0;
+}
+
+.list__table tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+}
+
+.list__table tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+}
+
+.video__list__title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.list__table th {
+  text-align: center;
+}
+
+/* media */
+@media screen and (max-width: 768px) {
+  .content__background__title {
+    padding: 0 1rem;
+  }
+
+  .content__img {
+    font-size: 6.5rem;
+  }
+}
