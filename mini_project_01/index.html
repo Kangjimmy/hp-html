@@ -14,19 +14,20 @@
 
     <link rel="stylesheet" href="css/settings.css" />
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
   </head>
 
   <body>
     <!-- header -->
     <header class="header">
-      <a href="#" class="header__title">Jimmy&#39;s join page</a>
+      <a href="index.html" class="header__title">Jimmy&#39;s join page</a>
       <nav class="header__nav">
         <ul class="nav__ul">
-          <li class="nav__ul__li"><a href="#">중고거래</a></li>
-          <li class="nav__ul__li"><a href="#">듣기</a></li>
+          <li class="nav__ul__li"><a href="#">영상</a></li>
           <li class="nav__ul__li"><a href="#">연주하기</a></li>
+          <li class="nav__ul__li"><a href="trade.html">중고거래</a></li>
         </ul>
       </nav>
       <a class="button__settings" href="login.html">로그인</a>
@@ -35,6 +36,18 @@
     <!-- main -->
     <main>
       <section class="content__img">Play your music</section>
+      <section class="content__video">
+        <h2>금주의 인기 영상</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/-HwqFAL9jDw?si=hfP1UZdLBqc__ZkS"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </section>
       <section class="content__trade">
         <h2 class="content__trade__title">방금 올라온 상품</h2>
         <article class="trade__lists">
@@ -89,6 +102,9 @@
         </article>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <p>ⓒ Jimmy&#39;s page all rights reserved</p>
+      <i class="fa-brands fa-css3-alt"></i>
+    </footer>
   </body>
 </html>
