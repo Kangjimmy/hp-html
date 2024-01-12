@@ -3,11 +3,13 @@
   font-family: "Nanum Gothic", sans-serif;
 }
 
+html {
+  min-width: 980px;
+}
+
 body {
   background-color: #15171e;
   color: #d9dadb;
-  /* width: 1600px; */
-  /* height: 800px; */
 }
 
 a {
