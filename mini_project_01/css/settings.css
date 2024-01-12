@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 html {
@@ -44,6 +44,20 @@ ul {
 
 .button__settings:hover {
   background-color: #188af5;
+}
+
+/* 배경 이미지 설정 */
+.content__img {
+  background-image: url('../img/background.png');
+  background-size: cover;
+  height: 500px;
+  text-align: center;
+  font-size: 9rem;
+  color: white;
+  padding: 8.5rem 2rem 0 2rem;
+  line-height: 10rem;
+  border-radius: 4px;
+  cursor: default;
 }
 
 @media screen and (max-width: 912px) {

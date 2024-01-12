@@ -15,43 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:wght@400;600&family=Rubik+Doodle+Shadow&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/settings.css" />
     <style>
-      /* :root {
-        배경색 : #15171E
-
-글자색 : #D9DADB
-
-밝은 파랑색: #0074E0
-      } */
-
-      * {
-        box-sizing: border-box;
-        font-family: "Nanum Gothic", sans-serif;
-      }
-
-      body {
-        background-color: #15171e;
-        color: #d9dadb;
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-      }
-
-      ul,
-      p,
-      a,
-      li,
-      body {
-        margin: 0;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-
       header {
         display: flex;
         justify-content: space-between;
@@ -61,23 +26,8 @@
       .header__title {
         font-size: 2rem;
         font-weight: bold;
-        font-family: "Rubik Doodle Shadow", system-ui;
+        font-family: 'Rubik Doodle Shadow', system-ui;
         /* font-family: "Bungee", sans-serif; */
-      }
-
-      .button__settings {
-        padding: 0.5rem 3rem;
-        font-size: 1rem;
-        font-weight: bold;
-        background-color: #0074e0;
-        color: white;
-        border: 0;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      .button__settings:hover {
-        background-color: #188af5;
       }
 
       main {
@@ -90,7 +40,7 @@
         flex-direction: column;
         background-color: #15171e;
         border-radius: 4px;
-        padding: 40px;
+        padding: 40px 40px 20px 40px;
         width: 440px;
         margin: auto;
         margin-top: 60px;
@@ -99,7 +49,7 @@
       }
 
       .main__logo {
-        font-family: "Rubik Doodle Shadow", system-ui;
+        font-family: 'Rubik Doodle Shadow', system-ui;
         cursor: default;
       }
 
@@ -146,6 +96,17 @@
       .main__join__button {
         padding: 20px 0px 20px 00px;
       }
+      .button__join {
+        display: inline-block;
+        margin-top: 1rem;
+        font-weight: bold;
+        color: #d9dadb;
+        transition: all 200ms ease-in;
+      }
+      .button__join:hover {
+        color: #f8f8f8;
+        transform: scale(1.02);
+      }
       .footer {
         justify-content: center;
         display: flex;
@@ -186,6 +147,7 @@
           </div>
           <div class="main__join">
             <button class="button__settings main__join__button">로그인</button>
+            <a class="button__join" href="join.html">아직 회원이 아니신가요?</a>
           </div>
         </div>
       </form>
