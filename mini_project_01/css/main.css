@@ -8,17 +8,18 @@
   padding: 17rem 2rem 0 2rem;
   line-height: 10rem;
   border-radius: 4px;
+  cursor: default;
 }
 
 .content__trade__title {
   margin: 60px 0 40px 0;
   text-align: center;
+  cursor: default;
 }
 
 .content__trade {
   width: 800px;
   margin: auto;
-  margin-bottom: 2rem;
 }
 
 .trade__lists {
