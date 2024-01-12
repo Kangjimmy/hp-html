@@ -1,0 +1,72 @@
+.content__img {
+  background-image: url("../img/background.png");
+  background-size: cover;
+  height: 500px;
+  text-align: center;
+  font-size: 9rem;
+  color: white;
+  padding: 12rem 2rem 0 2rem;
+  line-height: 10rem;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.content__trade__title {
+  margin: 60px 0 40px 0;
+  text-align: center;
+  cursor: default;
+}
+
+.content__trade {
+  width: 800px;
+  margin: auto;
+}
+
+.trade__lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 757px;
+}
+.trade__img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.trade__title {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+.trade__price {
+  font-weight: bold;
+}
+.trade__time {
+  font-size: 0.9rem;
+  color: darkgray;
+}
+
+.trade__list {
+  width: 230px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.trade__list:hover {
+  transform: scale(1.06);
+}
+
+@media screen and (max-width: 768px) {
+  .content__background__title {
+    padding: 0 1rem;
+  }
+
+  .content__img {
+    font-size: 6.5rem;
+  }
+
+  .trade__lists {
+    width: 100%;
+  }
+}
