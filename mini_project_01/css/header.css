@@ -16,7 +16,7 @@ header {
 .header__title {
   font-size: 2rem;
   font-weight: bold;
-  font-family: "Rubik Doodle Shadow", system-ui;
+  font-family: 'Rubik Doodle Shadow', system-ui;
 }
 
 .header__nav {

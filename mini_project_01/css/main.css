@@ -1,16 +1,19 @@
-.content__img {
-  background-image: url("../img/background.png");
-  background-size: cover;
-  height: 800px;
+/* video section */
+.content__video {
   text-align: center;
-  font-size: 9rem;
-  color: white;
-  padding: 17rem 2rem 0 2rem;
-  line-height: 10rem;
-  border-radius: 4px;
-  cursor: default;
+}
+.content__video__title {
+  margin: 60px 0 40px 0;
 }
 
+.video {
+  margin: auto;
+  border-radius: 8px;
+  width: 600px;
+  height: 400px;
+}
+
+/* trade section */
 .content__trade__title {
   margin: 60px 0 40px 0;
   text-align: center;
@@ -21,14 +24,6 @@
   width: 800px;
   margin: auto;
 }
-
-/* video section */
-
-.content__video {
-  text-align: center;
-}
-
-/* trade section */
 .trade__lists {
   display: flex;
   flex-wrap: wrap;
