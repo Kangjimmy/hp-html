@@ -1,0 +1,90 @@
+.content__video {
+  /* text-align: center; */
+  margin: 2rem;
+  border: 1px solid #3b4153;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.line {
+  border: 1px solid #3b4153;
+}
+.line2 {
+  border: 0.3px solid #3b4153;
+}
+
+.content__video__title > h2 {
+  padding-bottom: 1rem;
+}
+
+.title__info {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.content__video__main {
+  padding: 1rem;
+  text-align: center;
+}
+.content__video__main > p {
+  padding: 2rem;
+}
+
+.video {
+  width: 800px;
+}
+
+.video__comment__container {
+  padding: 0.5rem;
+}
+
+.video__comment__container > h2 {
+  padding-bottom: 0.5rem;
+}
+
+.inner__box {
+  display: flex;
+  margin: ;
+}
+.comment__img {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+.inner__box {
+  margin: 0.5rem;
+}
+
+.comment__info > p:nth-child(1) {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+.comment__info > p:nth-child(2) {
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+}
+.comment__info > p:nth-child(3) {
+  font-size: 0.75rem;
+  color: #8c8d8e;
+}
+
+.comment__write {
+  border: 2px solid #3b4153;
+  text-align: right;
+  border-radius: 8px;
+}
+
+#comment__textarea {
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+  background-color: #3b4153;
+  border-style: none;
+  color: #d9dadb;
+}
