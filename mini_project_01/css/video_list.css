@@ -63,6 +63,11 @@ h2 {
   text-align: center;
 }
 
+.button__write {
+  text-align: right;
+  margin-top: 1.5rem;
+  margin-right: 10%;
+}
 /* media */
 @media screen and (max-width: 768px) {
   .content__background__title {
