@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video show</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:wght@400;600&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/settings.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+
+    <link rel="stylesheet" href="../css/video_show.css" />
+
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <a href="../index.html" class="header__title">Jimmy&#39;s join page</a>
+      <nav class="header__nav">
+        <ul class="nav__ul">
+          <li class="nav__ul__li"><a href="video_list.html">연주영상</a></li>
+          <li class="nav__ul__li"><a href="#">연주하기</a></li>
+          <li class="nav__ul__li"><a href="trade.html">중고거래</a></li>
+        </ul>
+      </nav>
+      <a class="button__settings" href="login.html">로그인</a>
+    </header>
+
+    <main>
+      <section class="content__img">연주영상</section>
+
+      <section class="content__video">
+        <div class="content__video__title">
+          <h2>로시 - 구름cover</h2>
+          <div class="title__info">
+            <div>강지미</div>
+            <div>2024.01.12</div>
+          </div>
+        </div>
+        <hr class="line" />
+        <div class="content__video__main">
+          <video class="video" controls loop preload="auto">
+            <source src="../video/cloud.mp4#t=0.5" type="video/mp4" />
+          </video>
+          <p>로시 구름을 대학생때 동아리 친구와 같이 커버한 영상 입니다.</p>
+        </div>
+        <hr class="line" />
+        <div class="video__comment__container">
+          <h2>댓글</h2>
+          <hr class="line2" />
+          <div class="comment__container__box">
+            <div class="inner__box">
+              <div class="comment__img">
+                <i class="fa-regular fa-face-laugh-beam"></i>
+              </div>
+              <div class="comment__info">
+                <p>존 스미스</p>
+                <p>정말 좋네요.</p>
+                <p>2024.01.13 09:00</p>
+              </div>
+            </div>
+            <hr class="line2" />
+            <div class="inner__box">
+              <div class="comment__img">
+                <i class="fa-regular fa-face-laugh-beam"></i>
+              </div>
+              <div class="comment__info">
+                <p>히게단디즘</p>
+                <p>저도 합주 하고 싶어요 ㅠ</p>
+                <p>2024.01.13 12:31</p>
+              </div>
+            </div>
+            <hr class="line2" />
+            <div class="comment__write">
+              <textarea
+                name="commentTextarea"
+                id="comment__textarea"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <button class="button__settings textarea__button">등록</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
