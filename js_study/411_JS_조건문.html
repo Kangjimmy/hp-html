@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1></h1>
+      <p></p>
+    </div>
+
+    <script>
+      const h1 = document.querySelector(".container :nth-child(1)");
+      const p = document.querySelector("p");
+
+      const isThere = confirm("제목 표시를 할까요?");
+
+      if (isThere) {
+        h1.textContent = "당신이 내야할 버스 요금은?";
+      }
+
+      const age = prompt("나이가 어떻게 되시나요?");
+
+      if (age >= 20) {
+        p.textContent = "성인요금 1300원 입니다.";
+      } else if (age > 7) {
+        p.textContent = "미성년자 요금 800원 입니다.";
+      } else {
+        p.textContent = "무료";
+      }
+    </script>
+  </body>
+</html>
