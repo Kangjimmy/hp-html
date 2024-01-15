@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS_DOM_메소드 속성</title>
+  </head>
+  <body>
+    <h1
+      id="song-title"
+      class="heading"
+      title="가수:VOS(박지헌, 최현준, 김경록),
+      곡명: 다시 만날까봐"
+    >
+      <span>다시 만날까봐</span>
+    </h1>
+    <p class="lyrics">
+      인스타로 몰래 보는 너의 하루들 누가 봐도 헤어진 티를 내
+    </p>
+    <h3 class="lyrics">h3팔로우 다 끊고서 좋아요는 왜 눌렀니(ㅋㅋ)</h3>
+    <p class="lyrics">팔로우 다 끊고서 좋아요는 왜 눌렀니(ㅋㅋ)</p>
+
+    <script>
+      document.querySelector(".lyrics");
+      console.log(document.querySelector(".lyrics:nth-child(3)"));
+
+      console.log(document.querySelectorAll(".lyrics"));
+      // index 화 >> lyrics class 여러 개를 가져옴(여기서는 2개)
+
+      document.getElementsByClassName("lyrics");
+      console.log(document.getElementsByClassName("lyrics"));
+      //console.log(document.getElementsByClassName(".lyrics"));
+      // '.' 쓰면 안됨 >> 이유? .lyrics 를 class name (클래스 이름)으로 인식)
+
+      document.getElementById("song-title");
+      const title = document.getElementById("song-title");
+
+      console.log(title);
+
+      console.log(title.textContent); // 공백 포함, 태그에 상관없이 내부에 있는 요소들을 모두 출력한다.
+      console.log(title.innerText); // 텍스트만 출력
+
+      console.log(title.innerHTML);
+      console.log(title.className); //클래스 값 보기
+      console.log(title.style); //정의된 스타일 속성 나열
+      console.log(title.title);
+    </script>
+  </body>
+</html>
