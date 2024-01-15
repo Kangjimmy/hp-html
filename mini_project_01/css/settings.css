@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 html {
@@ -48,7 +48,7 @@ ul {
 
 /* 배경 이미지 설정 */
 .content__img {
-  background-image: url('../img/background.png');
+  background-image: url("../img/background.png");
   background-size: cover;
   height: 500px;
   text-align: center;
@@ -58,6 +58,23 @@ ul {
   line-height: 10rem;
   border-radius: 4px;
   cursor: default;
+}
+
+.content__write {
+  display: block;
+  position: relative;
+  animation: move__title 500ms ease;
+}
+
+@keyframes move__title {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 912px) {
