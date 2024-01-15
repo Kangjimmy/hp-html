@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 0; i < 8; i++) {
+        document.write(`반복중 ${i}<br/>`);
+      }
+      document.write("<br/>");
+      let randomNumber = Math.floor(Math.random() * 101);
+
+      for (let i = 0; i < 8; i++) {
+        document.write(`현재 ${i + 1}번째 반복 중입니다.<br/>`);
+      }
+
+      let inputNum;
+      alert(randomNumber);
+
+      let count = 1;
+      do {
+        inputNum = prompt("숫자를 입력하세요(0 ~ 100)");
+        if (inputNum > -1 && inputNum < 101) {
+          if (inputNum > randomNumber) {
+            console.log("inputNum > randomNumber");
+          } else if (inputNum < randomNumber) {
+            console.log("inputNum < randomNumber");
+          } else {
+            console.log(`same good.  count: ${count}`);
+          }
+        } else {
+          console.log("제대로된 숫자를 입력하세요.");
+          continue;
+        }
+        ++count;
+      } while (inputNum != randomNumber);
+    </script>
+  </body>
+</html>
