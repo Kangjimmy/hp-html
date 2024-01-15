@@ -18,15 +18,17 @@
 }
 .trade__img {
   width: 100%;
+  height: 220px;
   border-radius: 8px;
 }
 
 .trade__title {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 0.2rem;
 }
 .trade__price {
   font-weight: bold;
+  font-size: 0.9rem;
 }
 .trade__time {
   font-size: 0.9rem;
