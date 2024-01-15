@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>undefined_null_bool</title>
+  </head>
+  <body>
+    <script>
+      let name;
+      console.log(name); // undefined 출력됨
+
+      name = "닥터윌";
+      console.log(name); //닥터윌 >> 문자 출력됨
+
+      name = null;
+      console.log(name); // null 반환됨
+
+      // console.log(prompt("닥터윌"));
+      // 확인 버튼 >> 아무 것도 출력 안됨
+      // 취소 버튼 >> null 출력됨
+
+      //불리언(boolean)
+      console.log(true);
+      console.log(false);
+
+      // console.log(True);
+      // console.log(False);
+      // 에러 발생
+
+      console.log(typeof true);
+      console.log(typeof false);
+
+      //confirm() >> 확인
+      let answer = confirm("저한테 배우니 기분이 좋습니까?");
+      console.log(answer);
+
+      //확인 버튼 >> true
+      //취소 버튼 >> false
+
+      console.log(`현재 당신은 기분이 좋나요? ${answer}`);
+      console.log(`재밌쥬? ${answer}`);
+    </script>
+  </body>
+</html>
