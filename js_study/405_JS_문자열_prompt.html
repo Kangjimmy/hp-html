@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열 및 window.prompt()</title>
+  </head>
+  <body>
+    <script>
+      let apple;
+      apple = "사과";
+      console.log("사과");
+      console.log(`apple: ${apple}`);
+
+      let banana = "바나나";
+      console.log(`banana: ${banana}`);
+
+      console.log("사과" + " & " + "바나나");
+      console.log(apple + banana);
+
+      //   window.prompt("당신이 좋아하는 과일은?");
+      //입력창이 뜸
+      // window >> 생략가능
+
+      //   let answer = prompt("당신이 좋아하는 과일은?");
+      //   // 확인이 아닌 취소를 클릭하면 null(없음)을 반환
+      //   console.log(answer);
+      //   window.alert(answer);
+
+      //   const order = prompt("스패니쉬라떼 1잔 & 모카 2잔 주세용.");
+      //   alert(order);
+
+      const promptMsg = "당신이 좋아하는 사람은?";
+      prompt(promptMsg);
+    </script>
+  </body>
+</html>
