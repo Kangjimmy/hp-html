@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학점 계산</title>
+  </head>
+  <body>
+    <!-- <h3>if-else를 이용한 학점 계산</h3>
+    <hr /> -->
+
+    <script>
+      // let score;
+      // let grade;
+
+      // do {
+      //   score = parseInt(prompt('정수아님 점수를 입력하세요', 100));
+      //   console.log(score);
+      //   console.log(typeof score);
+      // } while (isNaN(score));
+
+      // if (score >= 90) {
+      //   grade = 'A';
+      // } else if (score >= 80) {
+      //   grade = 'B';
+      // } else if (score >= 70) {
+      //   grade = 'C';
+      // } else if (score >= 60) {
+      //   grade = 'D';
+      // } else {
+      //   grade = 'F';
+      // }
+
+      // document.write(`${score}점은 ${grade}입니다.`);
+
+      // let degree = prompt('물의 온도를 입력하세요');
+      // degree = parseInt(degree);
+
+      // if (degree >= 100) {
+      //   document.write('기체상태 입니다. : 온도가 100도보다 크거나 같습니다.');
+      // } else if (degree > 0) {
+      //   document.write(
+      //     '액체 상태 입니다. : 온도가 0도 초과, 100도 미만입니다.'
+      //   );
+      // } else {
+      //   document.write('고체 상태 입니다. : 온도가 0도 이하입니다.');
+      // }
+
+      // let number;
+      // do {
+      //   number = prompt('숫자를 입력하세요');
+      //   number = Number(number);
+      // } while (isNaN(number));
+
+      // if (number > 0) {
+      //   if (number % 2 === 0) {
+      //     document.write('0보다 큰 짝수');
+      //   } else {
+      //     document.write('0보다 큰 홀수');
+      //   }
+      // } else {
+      //   document.write('0보다 작거나 같은 수');
+      // }
+
+      var fruit = '두리안';
+      var price = 0;
+
+      switch (fruit) {
+        case '바나나':
+          price = 200;
+          break;
+        case '사과':
+          price = 300;
+          break;
+        case '체리':
+          price = 400;
+          break;
+        default:
+          document.write('팔지 않습니다. ');
+          price = 0;
+      }
+      document.write(fruit + '는 ' + price + '원 입니다.');
+    </script>
+  </body>
+</html>

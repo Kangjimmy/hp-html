@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice_0116</title>
+  </head>
+  <body>
+    <script>
+      document.write('<h3>14</h3>');
+      var x = 32;
+      var total = 100 + (x * 2) / 4 - 3;
+      var div = x / 10;
+      var mod = x % 2;
+      document.write(`x = ${x}<br/>`);
+      document.write(`100 + (x * 2) / 4 - 3 = ${total}<br/>`);
+      document.write(`x / 10 = ${div}<br/>`);
+      document.write(`x % 2 = ${mod}<br/>`);
+
+      document.write('<h3>15</h3>');
+      var x = 3;
+      var y = 3;
+      var z = 3;
+      x += 3;
+      y *= 3;
+      z %= 2;
+      document.write(`x += 3 실행 후, ${x}<br/>`);
+      document.write(`y *= 3 실행 후, ${y}<br/>`);
+      document.write(`z %= 2 실행 후, ${z}<br/>`);
+
+      document.write('<h3>16</h3>');
+      var x = 13;
+      var y = 7;
+      document.write(`x == y : ${x == y}<br/>`);
+      document.write(`x != y : ${x != y}<br/>`);
+      document.write(`x >= y : ${x >= y}<br/>`);
+      document.write(`x > y : ${x > y}<br/>`);
+      document.write(`x <= y : ${x <= y}<br/>`);
+      document.write(`x < y ${x < y}<br/>`);
+
+      document.write('<h3>17</h3>');
+      var x = true;
+      var y = false;
+      document.write(`x=${x}, y=${y}<br/><br/>`);
+      document.write(`x && y : ${x && y}<br/>`);
+      document.write(`x || y : ${x || y}<br/>`);
+      document.write(`!x : ${!x}<br/>`);
+      document.write(`(3 > 2) && (3 < 4) : ${3 > 2 && 3 < 4}<br/>`);
+      document.write(`(3 == -2) || (-1 < 0) : ${3 == -2 || -1 < 0}<br/>`);
+
+      document.write('<h3>18</h3>');
+      var a = 3;
+      var b = 5;
+      document.write(`a=${a}, b=${b}<br/><br/>`);
+      document.write(`두수의 차이 : ${a < b ? b - a : a - b}<br/>`);
+
+      document.write('<h3>19</h3>');
+      document.write(`${'abc' + 23}<br/>`);
+      document.write(`${23 + 'abc'}<br/>`);
+      document.write(`${23 + '35'}<br/>`);
+      document.write(`${23 + 35}<br/>`);
+      document.write(`${23 + 35 + 'abc'}<br/>`);
+      document.write(`${'abc' + 23 + 35}<br/>`);
+
+      document.write('<h3>20</h3>');
+      var a = 'Boys and Girls';
+      var b = '!!';
+      document.write(`a : ${a}<br/>`);
+      document.write(`b : ${b}<br/><br/>`);
+      document.write(`${a.charAt(9)}<br/>`);
+      document.write(`${(a + b).concat('입니다')}<br/>`);
+      document.write(`${a.slice(5, 8)}<br/>`);
+      document.write(`${a.toUpperCase()}<br/>`);
+      document.write(`${a.replace('and', 'or')}<br/>`);
+    </script>
+  </body>
+</html>
