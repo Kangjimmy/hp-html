@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>while문</title>
+  </head>
+  <body>
+    <script>
+      // while은 반복횟수를 모를때 주로 사용한다.
+
+      // var i = 0;
+      // while (i < 10) {
+      //   document.write(i++);
+      // }
+
+      // var i = 10;
+      // while (i > 0) {
+      //   document.write(`i : ${i--}<br/>`);
+      // }
+
+      // var num = parseInt(prompt('0보다 큰 정수를 입력하세요'));
+      // document.write('<h3>while 문으로 0에서 n까지 합</h3><hr/>');
+      // var i = 0,
+      //   sum = 0;
+
+      // while (num >= i) {
+      //   sum += i++;
+      // }
+
+      // document.write(`0에서 ${num}까지 합은 ${sum}`);
+
+      alert('💚1 ~ 100까지 랜덤한 숫자 맞추기 게임💙');
+      var randomNum = Math.floor(Math.random() * 101);
+      var myNum;
+
+      while (true) {
+        myNum = parseInt(prompt('추측한 숫자를 입력해주세요'));
+
+        if (randomNum == myNum) {
+          break;
+        } else if (randomNum > myNum) {
+          alert('👍');
+        } else {
+          alert('👎');
+        }
+      }
+
+      document.write(`<h3>숫자는 ${randomNum}입니다.</h3>`);
+      document.write('<h3>정답입니다!</h3>');
+    </script>
+  </body>
+</html>
