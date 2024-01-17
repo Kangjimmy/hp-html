@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var cnt = 1;
+      // for (var i = 0; i < 5; i++) {
+      //   for (var j = 0; j < 10; j++) {
+      //     document.write('아싸' + cnt++ + '<br/>');
+      //   }
+      // }
+
+      // for (var i = 0; i < 5; i++) {
+      //   for (var j = 0; j < i + 1; j++) {
+      //     document.write('*');
+      //   }
+      //   document.write('<br/>');
+      // }
+
+      // for (var i = 5; i > 0; i--) {
+      //   for (var j = 0; j < i; j++) {
+      //     document.write('*');
+      //   }
+      //   document.write('<br/>');
+      // }
+      // var num = 3;
+      // for (var i = 1; i <= num; i++) {
+      //   for (var j = num - 1; j >= i; j--) {
+      //     document.write('_');
+      //   }
+      //   for (var j = 1; j < i * 2; j++) {
+      //     document.write('*');
+      //   }
+
+      //   document.write('<br/>');
+      // }
+
+      let dan = parseInt(prompt('원하는 단을 입력하세요.'));
+
+      for (var i = dan; i <= dan; i++) {
+        for (var j = 1; j < 10; j++) {
+          document.write(`${dan} x ${j} = ${dan * j}<br/>`);
+        }
+      }
+    </script>
+  </body>
+</html>

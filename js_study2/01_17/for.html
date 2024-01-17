@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for문 연습</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // ----------------- 0 ------------------
+      // for (var i = 0; i < 10; i++) {
+      //   document.write(i);
+      // }
+
+      // ----------------- 1 ------------------
+      // document.write('<h3>for문으로 10px ~ 35px 크기 출력</h3><hr/>');
+
+      // for (var size = 10; size <= 35; size += 5) {
+      //   document.write('<span ');
+      //   document.write(
+      //     'style="font-size:' + size + 'px">' + size + 'px</span>'
+      //   );
+      // }
+
+      // ----------------- 2 ------------------
+      // var result = '';
+      // for (let i = 1; i < 100; i += 2) {
+      //   result += i + ' ';
+      // }
+      // document.write(result);
+
+      // ----------------- 3 ------------------
+      // var num = parseInt(prompt('1이상의 정수를 입력하세요'));
+      // var result = '';
+
+      // for (let i = 1; i < num / 2 + 1; i++) {
+      //   if (num % i === 0) {
+      //     result += i + ' ';
+      //   }
+      // }
+      // if (num != 1) {
+      //   result += num;
+      // }
+      // document.write(`<h2>입력한 수 : ${num}</h2>`);
+      // document.write(`<h2>${num}의 약수 : ${result}</h2>`);
+
+      // ----------------- 4 ------------------
+      //   <table>
+      //   <tr>
+      //     <th>n</th>
+      //     <td>2</td>
+      //   </tr>
+      //   <tr>
+      //     <th>n<sup>2</sup></th>
+      //     <td>4</td>
+      //   </tr>
+      // </table>
+      // let result = '';
+      // result += '<table>\n';
+      // result += '\t<tr>\n';
+      // result += '\t\t<th>n</th>\n';
+
+      // for (var i = 0; i < 10; i++) {
+      //   result += `\t\t<td>${i}</td>\n`;
+      // }
+      // result += '\t</tr>\n';
+      // result += '\t<tr>\n';
+      // result += '\t\t<th>n<sup>2</sup></th>\n';
+
+      // for (var i = 0; i < 10; i++) {
+      //   result += `\t\t<td>${i * i}</td>\n`;
+      // }
+      // result += '\t</tr>\n';
+      // result += '</table>';
+
+      // console.log(result);
+      // document.write(result);
+    </script>
+  </body>
+</html>
