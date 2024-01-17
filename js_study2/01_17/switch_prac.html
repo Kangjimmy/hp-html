@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch문 실습</title>
+  </head>
+  <body>
+    <h2>요일을 입력하세요.</h2>
+    <hr />
+    <script>
+      let dayOfWeekKor = prompt('요일을 입력하세요(월 ~ 일)');
+      let dayOfWeek;
+      switch (dayOfWeekKor) {
+        case '월':
+          dayOfWeek = 'Monday';
+          break;
+        case '화':
+          dayOfWeek = 'Tuesday';
+          break;
+        case '수':
+          dayOfWeek = 'Wednesday';
+          break;
+        case '목':
+          dayOfWeek = 'Thursday';
+          break;
+        case '금':
+          dayOfWeek = 'Friday';
+          break;
+        case '토':
+          dayOfWeek = 'Saturday';
+          break;
+        case '일':
+          dayOfWeek = 'Sunday';
+          break;
+        default:
+          dayOfWeek = '';
+          document.write(dayOfWeekKor + '은 요일이 아닙니다.');
+      }
+      if (dayOfWeek != '') {
+        document.write(dayOfWeek);
+      }
+    </script>
+  </body>
+</html>
