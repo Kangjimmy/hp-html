@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문 실습</title>
+  </head>
+  <body>
+    <script>
+      // ------------ 1 --------------
+      // let expression = prompt('수식 입력');
+
+      // document.write('<h2>eval()로 수식 계산</h2>');
+      // document.write('<hr/>');
+      // if (expression === '') {
+      //   document.write('입력된 식이 없습니다.');
+      // } else {
+      //   let result = eval(expression);
+      //   document.write(expression + ' = ' + result + '<br/>');
+      // }
+
+      // ------------ 2 --------------
+      // let tshirtCount = parseInt(prompt('티셔츠 개수 입력:'));
+      // let sweaterCount = parseInt(prompt('스웨터 개수 입력:'));
+      // const TSHIRT_PRICE = 10000;
+      // const SWEATER_PRICE = 30000;
+      // let totalPrice =
+      //   tshirtCount * TSHIRT_PRICE + sweaterCount * SWEATER_PRICE;
+
+      // let discountTotalPrice;
+      // if (totalPrice > 100000) {
+      //   discountTotalPrice = totalPrice * 0.85;
+      // } else {
+      //   discountTotalPrice = totalPrice * 0.95;
+      // }
+
+      // document.write(`티셔츠 개수 : ${tshirtCount}<br/>`);
+      // document.write(`스웨터 개수 : ${sweaterCount}<br/>`);
+      // document.write(`합계 : ${discountTotalPrice}원<br/>`);
+
+      // ------------ 3 --------------
+      // let pw = prompt('비밀번호를 입력하세요');
+      // let lengthPw = pw.length;
+      // let safetyPw;
+      // if (lengthPw > 8) {
+      //   safetyPw = 'Good';
+      // } else if (lengthPw > 4) {
+      //   safetyPw = 'Normal';
+      // } else {
+      //   safetyPw = 'Bad';
+      // }
+
+      // document.write('당신의 비밀번호 : ' + pw + '<br/>');
+      // document.write(`비밀번호의 안전성은 ${safetyPw}입니다.<br/>`);
+
+      // ------------ 4 --------------
+      let num1 = parseInt(prompt('첫 번째 숫자를 입력하세요'));
+      let num2 = parseInt(prompt('두 번째 숫자를 입력하세요'));
+      let numBigger;
+      if (num1 > num2) {
+        numBigger = num1;
+      } else if (num1 < num2) {
+        numBigger = num2;
+      } else {
+        numBigger = -1;
+      }
+      document.write(`첫 번째 입력한 숫자 : ${num1}<br/>`);
+      document.write(`두 번째 입력한 숫자 : ${num2}<br/>`);
+      if (numBigger > 0) {
+        numBigger % 2 === 0
+          ? document.write(`${numBigger}이 큰 수이고, 짝수이다.<br/>`)
+          : document.write(`${numBigger}이 큰 수이고, 홀수이다.<br/>`);
+      } else {
+        document.write(`두 수가 ${num1}으로 동일한 값이다.`);
+      }
+    </script>
+  </body>
+</html>
