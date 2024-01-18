@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array 연습1</title>
+  </head>
+  <body>
+    <script>
+      // 1.
+      // document.write(`<h1>1번 문제</h1>`);
+      // var degreeArr = [15.1, 15.4, 16.1, 17.5, 19.2, 21.4];
+      // var sum = 0;
+      // var avg = 0;
+      // for (var i = 0; i < degreeArr.length; i++) {
+      //   sum += degreeArr[i];
+      // }
+      // avg = sum / degreeArr.length;
+      // document.write(`<h2>평균 온도는 ${avg}</h2> `);
+      // document.write('<hr/>');
+
+      // =============================================
+      // document.write(`<h1>2번 문제</h1>`);
+      // 2.
+      // var money = [];
+      // money.push(5000);
+      // money.push(10000);
+      // money.push(30000);
+
+      // var str = '';
+      // var sum = 0;
+      // for (var i = 0; i < money.length; i++) {
+      //   sum += money[i];
+      // }
+      // document.write(`<h2>배열 money 출력: ${money}</h2> `);
+      // document.write(`<h2>배열 money 합계: ${sum}</h2><hr/>`);
+
+      // =============================================
+      // 3. 정수 5개를 원소로 가지는 배열을 만들고, 원소의 값 만큼 ‘*’를 출력하는 프로그램을 만드세요
+      document.write(`<h1>3번 문제</h1>`);
+      var numArr = [];
+      var numArrLength = 5;
+      var randomNum = 0;
+      var result = '';
+      for (var i = 0; i < numArrLength; i++) {
+        // 범위를 1 ~ 20으로 제한
+        randomNum = Math.floor(Math.random() * 20) + 1;
+        numArr.push(randomNum);
+      }
+      document.write(`<h2>var numbers = [${numArr}]</h2>`);
+      for (var i = 0; i < numArr.length; i++) {
+        for (var j = 0; j < numArr[i]; j++) {
+          result += '*';
+        }
+        result += numArr[i];
+        document.write(`<h2>${result}</h2>`);
+        result = '';
+      }
+
+      // =============================================
+      // 4. 다음 조건을 만족하는 프로그램을 작성하세요.
+      // - 빈 배열 score를 생성
+      // - 배열 score에 랜덤한 점수 5개를 입력(점수는 0~100까지의 범위)
+      // - 배열 score 출력
+      // - 배열 score의 합계 출력(for문을 이용)
+      // - 배열 score의 평균 출력
+      document.write(`<h1>4번 문제</h1>`);
+      var score = [];
+      var scoreLength = 5;
+      var result = '';
+      var sum = 0;
+
+      for (var i = 0; i < scoreLength; i++) {
+        score.push(Math.floor(Math.random() * 101));
+
+        sum += score[i];
+      }
+      result += `<h2>배열 score 출력</h2>`;
+      result += `<h2>${score}</h2><hr />`;
+
+      result += `<h2>score 합계 출력</h2>`;
+      result += `<h2>${sum}</h2><hr />`;
+
+      result += `<h2>score 평균 출력</h2>`;
+      result += `<h2>${sum / score.length}</h2>`;
+
+      document.write(result);
+      // =============================================
+      // 5. 배열의 원소를 리스트의 아이템으로 출력하는 웹 페이지를 작성하세요.
+      document.write(`<h1>5번 문제</h1>`);
+      var itemlist = ['라면', '계란', '물', '파'];
+      var result = '';
+
+      result += '<h2>라면을 만드는데 필요한 재료</h2><hr/>';
+      result += '<ul style="font-size: 1.5rem;">';
+
+      for (var i = 0; i < itemlist.length; i++) {
+        result += `<li>${itemlist[i]}</li>`;
+      }
+      result += '</ul>';
+      document.write(result);
+    </script>
+  </body>
+</html>
