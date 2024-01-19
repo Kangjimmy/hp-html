@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrayPrac02</title>
+  </head>
+  <body>
+    <script>
+      // var skills = ['HTML', 'CSS', 'Javascript', 'React'];
+
+      // document.write('<h1>지원 결과</h1><hr />');
+
+      // if (skills.includes('Javascript') && skills.includes('React')) {
+      //   document.write('<h2>축하합니다. 합격입니다.</h2>');
+      // } else if (skills.includes('Javascript') || skills.includes('React')) {
+      //   document.write('<h2>예비</h2>');
+      // } else {
+      //   document.write('<h2>합격</h2>');
+      // }
+
+      // 7번 문제
+      // document.write('<h1>7번 문제</h1>');
+      // var count = 5;
+      // var studentScore = [];
+
+      // for (var i = 0; i < count; i++) {
+      //   studentScore.push(parseInt(prompt('학생의 점수를 입력하세요')));
+      // }
+
+      // for (var i = 0; i < studentScore.length; i++) {
+      //   if (studentScore[i] > 60) {
+      //     document.write(
+      //       `<h2>${i + 1}번 학생: ${studentScore[i]}점, 합격입니다.</h2>`
+      //     );
+      //   } else {
+      //     document.write(
+      //       `<h2>${i + 1}번 학생: ${studentScore[i]}점, 불합격입니다.</h2>`
+      //     );
+      //   }
+      // }
+
+      // 8번 문제
+      // var arr = [];
+      // var maxNum = 0;
+      // var minNum = 999;
+      // for (var i = 0; i < 5; i++) {
+      //   arr.push(parseInt(prompt('점수 입력:')));
+
+      //   if (maxNum < arr[i]) {
+      //     maxNum = arr[i];
+      //   }
+
+      //   if (minNum > arr[i]) {
+      //     minNum = arr[i];
+      //   }
+      // }
+
+      // document.write(`<h2>입력한 점수 : ${arr}</h2><hr/>`);
+      // document.write(`<h2>최고 점수 : ${maxNum}</h2>`);
+      // document.write(`<h2>최저 점수 : ${minNum}</h2><hr/>`);
+
+      // arr.splice(arr.indexOf(maxNum), 1);
+      // arr.splice(arr.indexOf(minNum), 1);
+
+      // var sum = 0;
+      // arr.forEach((value) => (sum += value));
+
+      // document.write(`<h2>합 : ${sum}</h2>`);
+      // document.write(`<h2>평균 : ${sum / arr.length}</h2>`);
+
+      // 9번 문제
+      // 로또 번호 생성하기
+      // 로또 번호 범위 : 1 ~ 45
+
+      var arrLotto = [];
+      var checkLotto = Array.from({ length: 46 }, () => false);
+      var num = 0;
+
+      while (arrLotto.length < 6) {
+        num = Math.floor(Math.random() * 45) + 1;
+
+        if (!checkLotto[num]) {
+          arrLotto.push(num);
+          checkLotto[num] = true;
+        }
+      }
+
+      document.write(
+        `<h1 style="text-align: center;">로또 1등 당첨 번호</h1><hr />`
+      );
+      document.write(
+        `<h1 style="text-align: center; color: red">${arrLotto.join(', ')}</h1>`
+      );
+    </script>
+  </body>
+</html>
