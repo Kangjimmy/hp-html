@@ -42,12 +42,16 @@
       var numArrLength = 5;
       var randomNum = 0;
       var result = '';
+
+      // 정수 5개를 가지는 배열을 만든다
       for (var i = 0; i < numArrLength; i++) {
         // 범위를 1 ~ 20으로 제한
         randomNum = Math.floor(Math.random() * 20) + 1;
         numArr.push(randomNum);
       }
       document.write(`<h2>var numbers = [${numArr}]</h2>`);
+
+      // 별을 찍기 시작한다
       for (var i = 0; i < numArr.length; i++) {
         for (var j = 0; j < numArr[i]; j++) {
           result += '*';
