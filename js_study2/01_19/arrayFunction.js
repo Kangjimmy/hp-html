@@ -46,3 +46,13 @@ const answer = [
 
 console.log('숫제를 해야 할까요?');
 console.log(answer[Math.floor(Math.random() * answer.length)]);
+
+const test = {
+  10: 23,
+  a_b: 'aa',
+  '이 름': 'ㅎㅎ',
+};
+
+console.log(test.a_b);
+console.log(test['a_b']);
+console.log(test['이 름']);
