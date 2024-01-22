@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object practice</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin-bottom: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 1.
+      // - 비어있는 car 객체를 생성하세요.
+      // - 대괄호 표기법을 이용하여 car 객체의 속성을 추가하세요.
+      // - 대괄호 표기법을 이용하여 car 객체를 출력하세요.
+      var car = {};
+      car['color'] = 'red';
+      car['price'] = 10000;
+      car['number'] = 12345;
+
+      document.write('<div><h3>자동차 객체 표현</h3><hr/>');
+      document.write(`<h3>자동차 색상 : ${car['color']}</h3>`);
+      document.write(`<h3>자동차 가격 : ${car['price']}</h3>`);
+      document.write(`<h3>자동차 번호 : ${car['number']}</h3></div>`);
+
+      // 2.
+      // - 비어있는 account 객체를 생성하세요.
+      // - 점 표기법을 이용하여 account 객체의 속성을 추가하세요.
+      // - 점 표기법을 이용하여 account 객체를 출력하세요.
+      var account = {};
+      account.name = '강인섭';
+      account.number = 12345;
+      account.balance = 15000000000;
+
+      document.write('<div><h3>계좌 객체 표현</h3><hr/>');
+      document.write(`<h3>계좌주인 : ${account.name}</h3>`);
+      document.write(`<h3>계좌번호 : ${account.number}</h3>`);
+      document.write(`<h3>계좌잔액 : ${account.balance}</h3></div>`);
+
+      // 3. Math 객체를 이용하여 다음과 같은 결과를 완성하세요. (num = 3.6432)
+      // 최대값 Math.max(10, 5, 8, 30)
+      // 최소값 Math.min(10, 5, 8, 30)
+      // 소수 첫째자리 반올림 Math.round(숫자)
+      // 소수 첫째자리 내림 Math.floor(숫자)
+      // 소수 첫째자리 올림 Math.ceil(숫자)
+      // 원주율 Math.PI
+
+      var num = 3.6432;
+      document.write('<div><h3>Math 객체 표현</h3><hr/>');
+      document.write(`<h3>최대값 : ${Math.max(10, 5, 8, 30)}</h3>`);
+      document.write(`<h3>최소값 : ${Math.min(10, 5, 8, 30)}</h3>`);
+      document.write(`<h3>소수 첫째자리 반올림 : ${Math.round(num)}</h3>`);
+      document.write(`<h3>소수 첫째자리 내림 : ${Math.floor(num)}</h3>`);
+      document.write(`<h3>소수 첫째자리 올림: ${Math.ceil(num)}</h3>`);
+      document.write(`<h3>원주율 : ${Math.PI}</h3></div>`);
+
+      // 4. 다음 조건에 맞는 객체를 생성하고 결과를 출력하세요.
+      // - person 객체
+      // 프로퍼티
+      //  - firstName
+      //  - lastName
+      // 메서드
+      //  - sayHello
+
+      const person = {
+        firstName: 'Inseob',
+        lastName: 'Kang',
+        sayHello() {
+          document.write('<div><h3>Hello!</h3>');
+          document.write(
+            `<h3>My name is ${this.firstName} ${this.lastName}</h3></div>`
+          );
+        },
+      };
+      person.sayHello();
+
+      // 5. 다음 조건에 맞는 객체를 생성하고 결과를 출력하세요.
+      // * 조건
+      // - 생성자 함수를 이용할 것(함수 이름 : Fruit)
+      // - 다양한 과일 객체를 생성해서 출력할 것
+      document.write('<div>');
+      function Fruit(name, color, price) {
+        this.name = name;
+        this.color = color;
+        this.price = price;
+
+        this.display = () => {
+          document.write(`<h3>이름 : ${this.name}</h3>`);
+          document.write(`<h3>색깔 : ${this.color}</h3>`);
+          document.write(`<h3>가격 : ${this.price}</h3><hr/>`);
+        };
+      }
+      const apple = new Fruit('사과', 'red', 1000);
+      const orange = new Fruit('오렌지', 'orange', 800);
+      const banana = new Fruit('바나나', 'yellow', 500);
+      const grape = new Fruit('포도', 'purple', 1500);
+      const melon = new Fruit('멜론', 'green', 2000);
+
+      const fruitArr = [apple, orange, banana, grape, melon];
+
+      for (let i = 0; i < fruitArr.length; i++) {
+        fruitArr[i].display();
+      }
+
+      document.write('</div>');
+
+      // 6. 다음 조건에 맞는 자바스크립트 코드를 작성하세요.
+      // - 사용자와 컴퓨터와의 가위바위보 대결
+      // - 사용자는 가위, 바위, 보 중 하나를 입력
+
+      const selectComputer = Math.floor(Math.random() * 3);
+      const selectUser = prompt('하나를 선택하세요 : 가위(0), 바위(1), 보(2)');
+
+      const selectComputerInWord =
+        selectComputer == 0 ? '가위' : selectComputer == 1 ? '바위' : '보';
+      const selectUserInWord =
+        selectUser == 0 ? '가위' : selectUser == 1 ? '바위' : '보';
+
+      const selectResult = selectComputer + selectUser;
+
+      let result = `<h3>당신은 ${selectUserInWord}, 컴퓨터는 ${selectComputerInWord}를 냈습니다.</h3>`;
+
+      switch (selectResult) {
+        case '00':
+        case '11':
+        case '22':
+          result += `<h3>비겼습니다.</h3>`;
+          break;
+        case '02':
+        case '10':
+        case '21':
+          result += `<h3>컴퓨터가 이겼습니다.</h3>`;
+          break;
+        case '01':
+        case '12':
+        case '20':
+          result += `<h3>당신이 이겼습니다.</h3>`;
+          break;
+        default:
+          result = '<h3>wrong input</h3>';
+          break;
+      }
+      document.write('<div>');
+      document.write(`${result}`);
+      document.write('</div>');
+    </script>
+  </body>
+</html>
