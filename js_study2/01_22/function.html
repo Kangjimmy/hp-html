@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <h3>함수 adder</h3>
+    <hr />
+
+    <script>
+      function adder(num1, num2) {
+        let sum = num1 + num2;
+        return sum;
+      }
+      function multiple(num1, num2) {
+        let multi = num1 * num2;
+        return multi;
+      }
+
+      var sum = adder(24567, 98374);
+      var multi = multiple(24567, 98374);
+      document.write('24567 + 98374는 ' + sum + '<br/>');
+      document.write('24567 * 98374는 ' + multi + '<br/>');
+    </script>
+  </body>
+</html>
