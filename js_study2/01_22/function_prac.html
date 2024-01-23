@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function practice</title>
+  </head>
+  <body>
+    <script>
+      // 1. 브라우저 화면과 같이 출력되도록 <script> 태그 내에 함수를 작성하세요.
+
+      // big 함수를 작성하세요.
+      // function big(num1, num2) {
+      //   if (num1 > num2) {
+      //     return num1;
+      //   } else if (num1 < num2) {
+      //     return num2;
+      //   } else {
+      //     return '2 numbers are same';
+      //   }
+      // }
+      // const b = big('625', '555');
+      // document.write('큰수= ' + b + '<hr/>');
+
+      // 2. 브라우저 화면과 같이 출력되도록 <script> 태그 내에 함수를 작성하세요.
+
+      // function pr(char, count) {
+      //   let result = '';
+
+      //   for (let i = 0; i < count; i++) {
+      //     result += char;
+      //   }
+
+      //   document.write(result);
+      // }
+
+      // pr('%', 5);
+      // document.write('<hr/>');
+
+      // 3. 사용자로부터 정수를 입력 받은 후, 그 수가 짝수인지 홀수인지를 출력하세요.
+
+      // function oddOrEven(num) {
+      //   let result = '';
+      //   if (isNaN(num)) {
+      //     return;
+      //   }
+
+      //   num % 2 == 0 ? (result = '짝수') : (result = '홀수');
+
+      //   return result;
+      // }
+      // // 0, -0, NaN, null, '', undefined는 false
+      // var num = parseInt(prompt('정수를 입력하세요'));
+      // var result = oddOrEven(num);
+
+      // console.log(result);
+      // result = result === undefined ? 'wrong input' : result;
+      // document.write(`입력한 값 : ${num}<br/>${result}<hr/>`);
+
+      // 4. Math 객체를 이용하여 랜덤한 구구단 문제를 출력하고 답을 입력 받아 정답이면 다음과 같이
+      // 출력하고, 틀렸으면 ‘아니오’를 출력하는 웹 페이지를 작성하세요.
+
+      // function multiple(a, b) {
+      //   return a * b;
+      // }
+
+      // var num1 = Math.floor(Math.random() * 9) + 1;
+      // var num2 = Math.floor(Math.random() * 9) + 1;
+
+      // var userAnswer = parseInt(prompt(`${num1} * ${num2}값은 얼마입니까?`));
+      // var correctAnswer = multiple(num1, num2);
+      // if (isNaN(userAnswer) || correctAnswer != userAnswer) {
+      //   document.write(`❌땡❌<hr/>`);
+      // } else {
+      //   document.write(
+      //     `정답! ${num1} * ${num2} = ${correctAnswer} 입니다.<hr/>`
+      //   );
+      // }
+
+      // 5. 이름 문자열이 들어 있는 배열 names는 다음과 같다.
+      // const names = ["Ian", "David", "Darren", "peter"];
+
+      // 5-1) names 배열에 들어 있는 각 이름을 출력하세요.
+      // - 함수 : printName()
+      // 5-2) names 배열에서 길이가 가장 긴 이름을 출력하세요.
+      // - 함수 : printLongName()
+
+      const names = ['Ian', 'David', 'Darren', 'peter'];
+
+      function printName(arr) {
+        return arr.join(' ');
+      }
+
+      const printLongName = (arr) => {
+        let indexLongName = 0;
+        let lengthLongName = -1;
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].length > lengthLongName) {
+            lengthLongName = arr[i].length;
+            indexLongName = i;
+          }
+        }
+
+        return arr[indexLongName];
+      };
+
+      var result = '';
+      result += `<h3>이름 출력</h3>`;
+      result += `${printName(names)}`;
+      result += `<h3>길이가 긴 이름 출력</h3>`;
+      result += `${printLongName(names)}<br/><br/>`;
+
+      document.write(result);
+
+      // 6. 다음 조건을 만족하는 자바스크립트 코드를 작성하세요.
+      // * prompt()로 입력 받은 숫자만큼 * 기호를 출력
+      // * 별 문자를 출력하는 함수를 만들고 이름을 printStart()로 하세요.
+      // * prompt() 입력 창에 사용자가 실수, 문자열 등 양의 정수를 입력하지 않은 경우 모두
+      // “입력 오류입니다.”를 출력하세요.
+
+      var num = parseInt(prompt('정수를 입력하세요'));
+      var result = '';
+
+      function printStar(num) {
+        let result = '';
+        if (isNaN(num) || num < 1) {
+          return '입력 오류입니다.';
+        }
+
+        for (let i = 1; i <= num; i++) {
+          for (let j = 1; j <= i; j++) {
+            result += '*';
+          }
+          result += '<br/>';
+        }
+
+        return result;
+      }
+
+      document.write(printStar(num));
+    </script>
+  </body>
+</html>
