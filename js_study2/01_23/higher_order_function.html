@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>higher_order_function</title>
+  </head>
+  <body>
+    <script>
+      // 1. 홀수만 남기도록
+      // const numbers = [5, 10, 15, 20, 25, 30];
+      // const indexArr = [];
+      // numbers.forEach((value, index) => {
+      //   if (value % 2 == 0) {
+      //     numbers.splice(index, 1);
+      //   }
+      // });
+      // document.write(`<h2>배열의 남은 요소 : ${numbers}</h2>`);
+
+      // 2. find() 함수를 이용하여 특정 과일을 검색한 후 결과를 출력하는 프로그램을 만들어보세요.
+      // const apple = { name: 'apple', count: 2, price: 1000 };
+      // const banana = { name: 'banana', count: 3, price: 2500 };
+      // const orange = { name: 'orange', count: 5, price: 5000 };
+      // const fruits = [apple, banana, orange];
+
+      // var result = fruits.find((fruit) => fruit.name === 'banana');
+      // document.write(`<h2>이름 : ${result.name}</h2>`);
+      // document.write(`<h2>수량 : ${result.count}</h2>`);
+      // document.write(`<h2>가격 : ${result.price}</h2>`);
+
+      // 3. 다음 배열의 아이템 중 글자수가 5자 이상 되는 아이템을 검색하세요.
+      // * 조건
+      // - find() 함수를 이용
+      // - 배열의 아이템과 글자수를 함께 출력
+      // const array = ['javascript', 'css', 'react', 'html'];
+      // array.find((value) => {
+      //   if (value.length > 4) {
+      //     document.write(`value: ${value}, length: ${value.length}<br/>`);
+      //   }
+      // });
+
+      // 4. 다음 조건을 만족하는 프로그램을 만들어 보세요.
+      // * 조건
+      // - map() 함수를 이용
+      // - 배열 안 아이템을 각각 2배 곱해서 저장
+      // - 새로운 배열의 아이템이 3의 배수이면 2배, 그렇지 않으면 그냥 출력
+      // - 배열
+      const numbers = [5, 19, 42, 36, 70];
+
+      // const newNumbers = numbers.map((value) => {
+      //   let a;
+      //   a = value % 3 == 0 ? value * 2 * 2 : value * 2;
+      //   console.log(value);
+      //   console.log(a);
+      //   return a;
+      // });
+      const newNumbers = numbers
+        .map((value) => value * 2)
+        .map((value) => (value % 3 == 0 ? value * 2 : value));
+      document.write(`<h2>결과 : ${newNumbers}</h2>`);
+    </script>
+  </body>
+</html>
