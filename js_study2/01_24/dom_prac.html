@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom practice</title>
+    <style>
+      #text {
+        cursor: pointer;
+      }
+      #text:hover {
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      자바스크립트란?
+      <button onclick="makeBorder()">border</button>
+      <button onclick="countPTag()">p</button>
+    </h3>
+    <hr />
+    <p>
+      자바스크립트는 웹 프로그래밍 언어로서 웹 페이지를 동적 변경시킬 수 있다.
+    </p>
+    <p>
+      <span id="mySpan">C 언어</span>를 아는 사용자는 빠르게 학습할 수 있다.
+    </p>
+    <p>
+      이벤트 등 GUI 프로그래밍에 필요한 요소들이 있어 학습에 약간의 어려움이
+      있다.
+    </p>
+    <br /><br /><br />
+    <h3>innerHTML</h3>
+    <hr />
+    <p onclick="changeHTML(this)">이번 여름에는 어디로 여행을 갈까요?</p>
+    <script>
+      // * 문제 1-1
+      // “border” 버튼을 클릭하면 다음과 같이 id=”mySpan”인 태그에 2 픽셀의 violet 색 점선 테두리가
+      // 생기도록 자바스크립트 코드를 작성하세요. (CSS3 스타일 : 2px dotted violet )
+      const makeBorder = () => {
+        let borderButton = document.getElementById('mySpan');
+        borderButton.style.border = '2px dotted violet';
+      };
+      // * 문제 1-2
+      // “p” 버튼을 클릭하면 <p> 태그가 몇 개 있는지 alert()를 통해 다음과 같이 출력되도록
+      // 자바스크립트 코드를 작성하세요.
+      const countPTag = () => {
+        const pTags = document.getElementsByTagName('p');
+        alert(`p 태그의 개수 : ${pTags.length}`);
+      };
+
+      // 2. 다음은 DOM 객체의 innerHTML 프로퍼티를 다루는 실습입니다. 다음과 같이 <p></p>태그로
+      // 출력된 텍스트에 마우스로 클릭하면, prompt() 창을 출력하고, 사용자가 입력한 HTML 텍스트로
+      // <p> 태그의 내용을 바꾸는 웹 페이지를 작성하세요.
+
+      const changeHTML = (object) => {
+        let result = prompt('HTML 텍스트 혹은 그냥 텍스트를 입력하세요');
+        object.innerHTML =
+          result === null || result == '' ? '입력없음' : result;
+      };
+    </script>
+  </body>
+</html>
