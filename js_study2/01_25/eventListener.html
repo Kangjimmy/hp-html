@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <p>HTML 태그에 리스너 작성</p>
+    <hr />
+    <p
+      onmouseover="this.style.backgroundColor='orange'
+    "
+      onmouseout="this.style.backgroundColor='white'"
+    >
+      마우스 올리면 orange색으로 변경
+    </p>
+    <p id="p2">마우스 올리면 green색으로 변경</p>
+    <p id="p3">마우스 올리면 blue색으로 변경</p>
+    <script>
+      let p;
+      function init() {
+        console.log('init');
+        p = document.getElementById('p2');
+        p.onmouseover = over1;
+        p.onmouseout = out1;
+      }
+      function over1() {
+        p.style.backgroundColor = 'green';
+      }
+      function out1() {
+        p.style.backgroundColor = 'white';
+      }
+
+      function over2() {
+        p3.style.backgroundColor = 'blue';
+      }
+      function out2() {
+        p3.style.backgroundColor = 'white';
+      }
+
+      let p3 = document.querySelector('#p3');
+      p3.addEventListener('mouseover', over2);
+      p3.addEventListener('mouseout', out2);
+    </script>
+  </body>
+</html>
