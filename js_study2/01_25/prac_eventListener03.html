@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener03</title>
+  </head>
+  <body>
+    <h3>포커스와 onblur, onfous</h3>
+    <hr />
+    <p>
+      브라우저 바깥에 마우스를 클릭하면 window 객체에 blur 이벤트가 발생하고
+      다시 마우스를 클릭하면 window 객체에 focus 이벤트가 발생한다.
+    </p>
+    <script>
+      // 3. 브라우저 내의 아무 곳이나 클릭하면 브라우저의 배경색이 white, 브라우저 바깥을 클릭하면
+      // 브라우저의 배경색이 lightgray 로 바뀌도록 웹 페이지를 작성하세요.
+      const body = document.querySelector('body');
+      const setLightGrey = (event) => {
+        body.style.backgroundColor = 'lightGrey';
+      };
+      onblur = setLightGrey;
+
+      document.addEventListener('click', () => {
+        body.style.backgroundColor = 'white';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener02</title>
+  </head>
+  <body>
+    <h3>span 태그에만 onmouseover/onmouseout</h3>
+    <hr />
+    <p>
+      span 태그에 대해서만 <span>마우스</span>가 올라올 때 밑줄이 그어지고
+      <span>마우스</span>가 내려갈 때 밑줄이 사라지도록
+      <span>자바스크립트 코드</span>를 작성한다.
+    </p>
+    <script>
+      // 2. 웹 페이지에 있는 모든 <span> 태그에 대해, 마우스가 올라오면 해당 태그의 텍스트에 밑줄을
+      // 긋고, 내려가면 밑줄을 지우는 웹 페이지를 작성하세요.
+      // * 텍스트에 밑줄 긋기 : style.textDecoration = “underline”
+      // * 텍스트에서 밑줄 지우기 : style.textDecoration = “none”
+      // * 이벤트가 발생한 객체를 찾는 속성 : e.target
+
+      const spanArr = document.querySelectorAll('span');
+
+      function deleteTextDecoration(event) {
+        event.target.style.textDecoration = 'none';
+      }
+
+      spanArr.forEach((item) => {
+        item.addEventListener('mouseover', () => {
+          item.style.textDecoration = 'underline';
+        });
+
+        item.onmouseout = deleteTextDecoration;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener04</title>
+  </head>
+  <body>
+    <h3>계산기 만들기</h3>
+    <hr />
+    <section>
+      <h4>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</h4>
+      <form>
+        <label for="exp">식</label>
+        <input type="text" name="exp" id="exp" value="" /> <br />
+        <label for="result">값</label>
+        <input type="text" name="result" id="result" value="" />
+      </form>
+    </section>
+    <script>
+      // 4. 계산식을 입력 받아 결과를 출력하는 웹 페이지를 작성하세요.
+      // * 수식을 입력 후, <Enter>키를 누르면 수식을 계산하고 결과를 출력합니다.
+      // * <Enter>키의 keyCode 는 13 입니다.
+
+      const exp = document.getElementById('exp');
+      const result = document.getElementById('result');
+
+      exp.addEventListener('keydown', (event) => {
+        if (event.keyCode == '13') {
+          result.value = eval(exp.value);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener</title>
+    <style>
+      span {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>계산해봅시다</h3>
+    <hr />
+    <p class="formula"></p>
+    <p class="formula"></p>
+    <p class="formula"></p>
+
+    <script>
+      const COUNT_PROBLEM = 3;
+      const formulaArr = document.querySelectorAll('.formula');
+      const makeNum = () => {
+        return Math.floor(Math.random() * 50);
+      };
+      const answer = new Array(COUNT_PROBLEM);
+      const makeSign = () => {
+        let num = Math.floor(Math.random() * 4);
+        let sign = '';
+        switch (num) {
+          case 0:
+            sign = '+';
+            break;
+          case 1:
+            sign = '-';
+            break;
+          case 2:
+            sign = '*';
+            break;
+          case 3:
+            sign = '/';
+            break;
+          default:
+            return;
+        }
+        return sign;
+      };
+      const calcArray = new Array(COUNT_PROBLEM);
+      for (let i = 0; i < calcArray.length; i++) {
+        const count = Math.floor(Math.random() * 3);
+        let arr;
+        switch (count) {
+          case 0:
+          case 1:
+          case 2:
+            arr = new Array(3 + 2 * count);
+            arr[0] = makeNum();
+            break;
+          default:
+            console.log('something wrong..');
+            break;
+        }
+
+        for (let i = 0; i <= count * 2; i += 2) {
+          arr[i + 1] = makeSign();
+          arr[i + 2] = makeNum();
+        }
+        calcArray[i] = arr;
+      }
+
+      calcArray.forEach((array, index) => {
+        let result = '';
+        array.forEach((value) => {
+          result += value;
+          result += ' ';
+        });
+        answer[index] = eval(result);
+        formulaArr[index].innerHTML = result + '= <span>답</span>';
+      });
+
+      const spans = document.querySelectorAll('span');
+      spans.forEach((value, index) => {
+        value.addEventListener('click', () => {
+          value.innerHTML = answer[index];
+        });
+      });
+    </script>
+  </body>
+</html>
