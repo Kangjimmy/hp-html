@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>익명함수로 이벤트 리스너 작성</title>
+  </head>
+  <body onload="init()">
+    <h3>익명 함수로 이벤트 리스너 작성</h3>
+    <hr />
+    <p id="p">마우스 올리면 orange색으로 변경</p>
+
+    <script>
+      function init() {
+        let p = document.querySelector('#p');
+        p.addEventListener('mouseover', function () {
+          this.style.backgroundColor = 'orange';
+        });
+        p.addEventListener('mouseout', function () {
+          this.style.backgroundColor = 'white';
+        });
+      }
+    </script>
+  </body>
+</html>
