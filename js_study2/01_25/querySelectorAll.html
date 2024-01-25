@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>querySelectorAll</title>
+  </head>
+  <body>
+    <p class="soo">안녕하세요</p>
+    <p class="soo">안녕하세요</p>
+    <p class="soo">안녕하세요</p>
+    <br />
+    <p class="jim">안녕하세요</p>
+    <p class="css">안녕하세요</p>
+    <p id="javascript">안녕하세요</p>
+  </body>
+  <script>
+    let pList = document.querySelectorAll('.soo');
+
+    pList.forEach((pTag) => {
+      pTag.style.color = 'pink';
+      pTag.style.fontSize = '30px';
+    });
+
+    let pList2 = document.querySelectorAll('.jim, #javascript');
+    pList2.forEach((item) => {
+      item.style.color = 'blue';
+      item.style.fontSize = '25px';
+    });
+  </script>
+</html>
