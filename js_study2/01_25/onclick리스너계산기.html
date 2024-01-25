@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onclick리스너계산기</title>
+  </head>
+  <body>
+    <h3>onclick, 계산기 만들기</h3>
+    <hr />
+    <form>
+      식<input type="text" id="exp" value="" /><br />
+      값<input type="text" id="result" value="" />
+      <input type="button" value="계산" onclick="calculate(event)" />
+    </form>
+    <script>
+      const calculate = (event) => {
+        let exp = document.getElementById('exp');
+        let result = document.getElementById('result');
+        console.log(event.type);
+
+        result.value = eval(exp.value);
+      };
+
+      let form = document.querySelector('form');
+      console.log(form);
+      form.addEventListener('submit', (event) => {
+        let exp = document.getElementById('exp');
+        let result = document.getElementById('result');
+        console.log(event.type);
+
+        result.value = eval(exp.value);
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
