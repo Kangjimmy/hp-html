@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p">마우스를 올려보세요.</p>
+    <button onclick="eventFunction(event)">클릭하세요</button>
+  </body>
+  <script>
+    let p = document.querySelector('#p');
+    p.onmouseover = eventFunction;
+
+    function eventFunction(event) {
+      alert(event.type);
+    }
+  </script>
+</html>
