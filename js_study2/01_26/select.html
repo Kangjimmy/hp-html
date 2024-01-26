@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>select</title>
+    <style>
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <select id="fruits" onchange="drawImage(this)">
+        <option value="images/strawberry.jpg">딸기</option>
+        <option value="images/banana.jpg" selected>바나나</option>
+        <option value="images/apple.jpg">사과</option>
+      </select>
+      <img id="imgFruit" src="images/banana.jpg" alt="fruit_image" />
+    </form>
+    <script>
+      function drawImage(obj) {
+        // const sel = document.querySelector("#fruits");
+        const imgFruit = document.querySelector("#imgFruit");
+
+        imgFruit.src = obj.options[obj.selectedIndex].value;
+      }
+    </script>
+  </body>
+</html>
