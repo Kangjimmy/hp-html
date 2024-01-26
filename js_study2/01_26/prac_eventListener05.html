@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener05</title>
+    <style>
+      div {
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100px;
+      }
+
+      label {
+        display: inline-block;
+        width: 100px;
+      }
+      button {
+        margin-right: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>산수 문제를 풀어 봅시다.</h3>
+    <p>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요.</p>
+    <hr />
+    <form>
+      <div>
+        <label for="p1">5*6</label>
+        <input id="p1" type="text" />
+      </div>
+      <div>
+        <label for="p2">7+5*3</label>
+        <input id="p2" type="text" />
+      </div>
+      <div>
+        <label for="p3">23*2</label>
+        <input id="p3" type="text" />
+      </div>
+      <div>
+        <label for="p4">35-7</label>
+        <input id="p4" type="text" />
+      </div>
+      <div>
+        <button>채점</button>
+        <span class="result">0</span>
+      </div>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      const myAnswerArr = document.querySelectorAll("input");
+      const labels = document.querySelectorAll("label");
+      const correctAnswerArr = new Array(labels.length);
+      const result = document.querySelector(".result");
+      let count = 0;
+      labels.forEach((value, index) => {
+        correctAnswerArr[index] = eval(value.innerText);
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        count = 0;
+        myAnswerArr.forEach((input, index) => {
+          if (input.value != correctAnswerArr[index]) {
+            labels[index].style.textDecoration = "line-through";
+          } else {
+            labels[index].style.textDecoration = "none";
+            count++;
+          }
+          if (count == labels.length) {
+            alert("축하합니다🎉 100점입니다!");
+          }
+        });
+
+        result.innerHTML = count;
+      });
+    </script>
+  </body>
+</html>
