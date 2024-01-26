@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        border: 1px solid black;
+        width: 380px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .screen1 {
+        display: inline-block;
+        height: 80px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 5px;
+        font-size: 3rem;
+        overflow-x: auto;
+      }
+      .deleteKey {
+        border: 1px solid black;
+        text-align: right;
+        padding-right: 10px;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        font-size: 2rem;
+        gap: 10px;
+      }
+
+      .button {
+        border: 1px solid black;
+        border-radius: 100%;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>계산기</h3>
+    <hr />
+    <div class="container">
+      <div class="screen1"></div>
+      <div class="deleteKey">
+        <i class="fa-solid fa-delete-left delete"></i>
+      </div>
+      <div class="buttons">
+        <div class="button clear">C</div>
+        <div class="button">()</div>
+        <div class="button operator">%</div>
+        <div class="button operator">÷</div>
+
+        <div class="button num">7</div>
+        <div class="button num">8</div>
+        <div class="button num">9</div>
+        <div class="button operator">×</div>
+
+        <div class="button num">4</div>
+        <div class="button num">5</div>
+        <div class="button num">6</div>
+        <div class="button operator">-</div>
+
+        <div class="button num">1</div>
+        <div class="button num">2</div>
+        <div class="button num">3</div>
+        <div class="button operator">+</div>
+
+        <div class="button">+/-</div>
+        <div class="button num">0</div>
+        <div class="button dot">.</div>
+        <div class="button equal">=</div>
+      </div>
+    </div>
+    <script>
+      const screen = document.querySelector(".screen1");
+      const deleteKey = document.querySelector(".deleteKey");
+      const nums = document.querySelectorAll(".button.num");
+      const operators = document.querySelectorAll(".button.operator");
+      const dot = document.querySelector(".button.dot");
+      const equal = document.querySelector(".button.equal");
+      const opArr = ["+", "-", "×", "÷", "%"];
+      const clear = document.querySelector(".clear");
+
+      let index = 0;
+      let calculation = [];
+
+      // 숫자입력
+      nums.forEach((num) => {
+        num.addEventListener("click", (e) => {
+          calculation[index++] = e.target.innerHTML;
+          console.log(e.target.innerHTML);
+          screen.innerText = calculation.join("");
+          console.log(calculation);
+        });
+      });
+
+      // 기호입력
+      operators.forEach((op) => {
+        op.addEventListener("click", (e) => {
+          console.log(e);
+          if (calculation.length === 0) {
+            // 입력된 것이 없는경우
+            return;
+          } else if (opArr.includes(calculation[calculation.length - 1])) {
+            // 마지막 입력이 기호인 경우
+            console.log(calculation[calculation.length - 1]);
+            calculation[calculation.length - 1] = e.target.innerHTML;
+            console.log(calculation);
+            screen.innerText = calculation.join("");
+          } else {
+            calculation[index++] = e.target.innerHTML;
+            screen.innerText = calculation.join("");
+          }
+        });
+      });
+
+      // 계산하기
+      equal.addEventListener("click", (e) => {
+        let result = 0;
+        if (calculation.length === 0) {
+          // 입력된 것이 없는경우
+          return;
+        } else if (opArr.includes(calculation[calculation.length - 1])) {
+          // 마지막 입력이 기호인 경우
+          console.log("식이 잘못되었음.");
+          return;
+        } else {
+          calculation = calculation.map((value) => {
+            if (value == "×") {
+              value = "*";
+            }
+            if (value == "÷") {
+              value = "/";
+            }
+            return value;
+          });
+          result = eval(calculation.join(""));
+          screen.innerHTML = result;
+          calculation.splice(0, calculation.length);
+          index = 0;
+        }
+      });
+
+      // clear
+      clear.addEventListener("click", (e) => {
+        calculation.splice(0, calculation.length);
+        screen.innerHTML = "";
+        index = 0;
+      });
+
+      // deleteKey
+      deleteKey.addEventListener("click", (e) => {
+        if (calculation.length != 0) {
+          calculation.splice(--index, 1);
+          screen.innerHTML = calculation.join("");
+        }
+      });
+
+      // dot
+      dot.addEventListener("click", (e) => {
+        // 기호가 있으면 0을 붙이고 .을 붙인다.
+        //
+      });
+    </script>
+  </body>
+</html>
