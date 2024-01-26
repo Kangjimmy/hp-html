@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener07</title>
+  </head>
+  <body>
+    <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+    <hr />
+    <form>
+      <input
+        type="radio"
+        name="fruits"
+        id="banana"
+        value="images/banana.jpg"
+        data-alt="banana_picture"
+      />
+      <label for="banana">바나나</label>
+      <input
+        type="radio"
+        name="fruits"
+        id="strawberry"
+        value="images/strawberry.jpg"
+        data-alt="strawberry_picture"
+      />
+      <label for="strawberry">딸기</label>
+      <input
+        type="radio"
+        name="fruits"
+        id="apple"
+        checked
+        value="images/apple.jpg"
+        data-alt="apple_picture"
+      />
+      <label for="apple">사과</label><br />
+      <img src="images/apple.jpg" alt="apple_picture" />
+    </form>
+    <script>
+      const img = document.querySelector("img");
+      const fruitsRadio = document.querySelectorAll('input[name="fruits"]');
+      const form = document.querySelector("form");
+
+      form.addEventListener("change", (event) => {
+        if (event.target.tagName == "INPUT") {
+          img.setAttribute("alt", event.target.dataset.alt);
+          img.setAttribute("src", event.target.value);
+        }
+      });
+    </script>
+  </body>
+</html>
