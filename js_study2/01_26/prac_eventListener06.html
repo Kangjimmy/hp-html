@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener06</title>
+    <style>
+      div {
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100px;
+      }
+
+      label {
+        display: inline-block;
+        width: 100px;
+      }
+      button {
+        margin-right: 30px;
+      }
+      .init {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>산수 문제를 풀어 봅시다.</h3>
+    <p>자동으로 문제가 만들어집니다. 답 입력 후 채점 버튼을 누르세요.</p>
+    <p>
+      다시 버튼을 누르면 새로운 문제가 출력됩니다. 나누기 결과는 정수입니다.
+    </p>
+    <hr />
+    <form>
+      <div>
+        <label for="p1"></label>
+        <input class="answer" id="p1" type="text" />
+      </div>
+      <div>
+        <label for="p2"></label>
+        <input class="answer" id="p2" type="text" />
+      </div>
+      <div>
+        <label for="p3"></label>
+        <input class="answer" id="p3" type="text" />
+      </div>
+      <div>
+        <label for="p4"></label>
+        <input class="answer" id="p4" type="text" />
+      </div>
+      <div>
+        <button>채점</button>
+        <span class="result">0</span>
+        <input class="init" type="button" value="다시하기" />
+      </div>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      const myAnswerArr = document.querySelectorAll(".answer");
+      const labels = document.querySelectorAll("label");
+      const correctAnswerArr = new Array(labels.length);
+      const result = document.querySelector(".result");
+      const init = document.querySelector(".init");
+      let count = 0;
+
+      function makeProblem() {
+        // 2개 숫자 or 3개 숫자로 만들지
+        let numberOfNumbers = Math.floor(Math.random() * 2);
+        let problem = "";
+
+        problem += randomNum();
+
+        for (let i = 0; i < numberOfNumbers * 2 + 1; i += 2) {
+          problem += randomSign();
+          problem += randomNum();
+        }
+
+        return problem;
+      }
+
+      function randomNum() {
+        // 범위 1 ~ 20까지
+        return Math.floor(Math.random() * 20) + 1;
+      }
+
+      function randomSign() {
+        let num = Math.floor(Math.random() * 4);
+        let sign;
+        switch (num) {
+          case 0:
+            sign = "+";
+            break;
+          case 1:
+            sign = "-";
+            break;
+          case 2:
+            sign = "*";
+            break;
+          case 3:
+            sign = "/";
+            break;
+          default:
+            sign = "+";
+            break;
+        }
+        return sign;
+      }
+
+      function initProblem(labels) {
+        console.clear();
+        labels.forEach((value, index) => {
+          const problem = makeProblem();
+          correctAnswerArr[index] = Math.floor(eval(problem));
+          value.innerText = problem;
+          myAnswerArr[index].value = "";
+          labels[index].style.textDecoration = "none";
+        });
+        count = 0;
+        result.innerHTML = count;
+        console.log(correctAnswerArr);
+      }
+
+      // 문제 초기화
+      initProblem(labels);
+
+      // 채점했을때
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        count = 0;
+        myAnswerArr.forEach((input, index) => {
+          if (input.value != correctAnswerArr[index]) {
+            labels[index].style.textDecoration = "line-through";
+          } else {
+            labels[index].style.textDecoration = "none";
+            count++;
+          }
+          result.innerHTML = count;
+
+          setTimeout(() => {
+            if (count == labels.length) {
+              alert("축하합니다🎉 100점입니다!");
+            }
+            count = 0;
+          }, 0);
+        });
+      });
+
+      // 다시하기
+      init.addEventListener("click", () => {
+        initProblem(labels);
+      });
+    </script>
+  </body>
+</html>
