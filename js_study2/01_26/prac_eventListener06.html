@@ -131,6 +131,8 @@
         myAnswerArr.forEach((input, index) => {
           if (input.value != correctAnswerArr[index]) {
             labels[index].style.textDecoration = "line-through";
+          } else if (input.value == "" || isNaN(input.value)) {
+            labels[index].style.textDecoration = "line-through";
           } else {
             labels[index].style.textDecoration = "none";
             count++;

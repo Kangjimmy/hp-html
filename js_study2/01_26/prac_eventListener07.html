@@ -42,6 +42,7 @@
       const form = document.querySelector("form");
 
       form.addEventListener("change", (event) => {
+        console.log(event);
         if (event.target.tagName == "INPUT") {
           img.setAttribute("alt", event.target.dataset.alt);
           img.setAttribute("src", event.target.value);
