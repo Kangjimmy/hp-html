@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac_eventListener08</title>
+    <style>
+      label {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>옵션 선택으로 사이트 접속</h3>
+    <p>옵션 선택마다 새 윈도우에 접속합니다.</p>
+    <hr />
+
+    <label for="select-site">접속할 사이트</label><br />
+    <select name="selectSite" id="select-site">
+      <option value="https://www.naver.com">네이버</option>
+      <option value="https://www.google.com">구글</option>
+    </select>
+
+    <script>
+      // 8. 옵션을 선택하면 옵션에 주어진 사이트에 접속하는 웹 페이지를 작성하세요.
+      // * <select> 태그의 내용 변경 속성 : onchange
+
+      // * 새 윈도우 열기
+      // - window.open(“사이트주소”, "윈도우이름(생략가능)", "left=500, top=400, width=500, height=400");
+      // - 윈도우이름 생략 시, 새 탭으로 열림
+
+      // * 옵션을 선택할 때마다 새 윈도우를 하나씩 열고, 사이트에 접속하세요.
+      const selectSite = document.querySelector("#select-site");
+      selectSite.addEventListener("change", (event) => {
+        const sel = event.target;
+        const width = "600";
+        const height = "400";
+        open(
+          sel.options[sel.selectedIndex].value,
+          "window",
+          `top=${window.screen.height / 2 - height / 2}, left=${
+            window.screen.width / 2 - width / 2
+          }, width=${width}, height=${height}`
+        );
+      });
+    </script>
+  </body>
+</html>
