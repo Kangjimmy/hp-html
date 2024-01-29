@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/board.js" defer></script>
+    <title>board</title>
+
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      thead > tr {
+        background-color: pink;
+      }
+
+      .th__id {
+        width: 50px;
+      }
+      .th__title,
+      .th__publisher {
+        width: 200px;
+      }
+      .th__price {
+        width: 120px;
+      }
+
+      tbody {
+        /* text-align: center; */
+      }
+
+      input {
+        height: 20px;
+        margin-bottom: 5px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th class="th__id">id</th>
+          <th class="th__title">title</th>
+          <th class="th__publisher">publisher</th>
+          <th class="th__price">price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <h3>도서 추가</h3>
+    <form id="save">
+      <label for="title">제목 :</label>
+      <input type="text" name="title" id="title" /><br />
+      <label for="publisher">저자 :</label>
+      <input type="text" name="publisher" id="publisher" /><br />
+      <label for="price">가격 :</label>
+      <input type="text" name="price" id="price" />
+      <button>저장</button>
+    </form>
+  </body>
+</html>
