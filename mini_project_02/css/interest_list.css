@@ -1,0 +1,52 @@
+.title {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+main {
+  min-height: 600px;
+}
+
+.interest__container {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.interest__container__empty {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.interest__container__empty.x {
+  font-size: 7rem;
+}
+
+.interest__lists__ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.ul__div {
+  position: relative;
+  width: 250px;
+  height: 220px;
+}
+.ul__div > li {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.ul__div__meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(169, 169, 169);
+  border-radius: 4px;
+}
