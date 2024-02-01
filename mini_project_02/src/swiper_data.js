@@ -26,6 +26,7 @@ export const data = {
       V_MAX: '18:00',
       REVSTDDAYNM: '이용기간시작일',
       REVSTDDAY: '1',
+      INDEX: 102,
     },
     {
       GUBUN: '자체',
@@ -53,6 +54,7 @@ export const data = {
       V_MAX: '00:00',
       REVSTDDAYNM: '',
       REVSTDDAY: '',
+      INDEX: 154,
     },
     {
       GUBUN: '자체',
@@ -80,6 +82,7 @@ export const data = {
       V_MAX: '16:00',
       REVSTDDAYNM: '이용일',
       REVSTDDAY: '3',
+      INDEX: 41,
     },
     {
       GUBUN: '자체',
@@ -108,6 +111,7 @@ export const data = {
       V_MAX: '16:00',
       REVSTDDAYNM: '이용일',
       REVSTDDAY: '3',
+      INDEX: 7,
     },
     {
       GUBUN: '자체',
@@ -135,6 +139,7 @@ export const data = {
       V_MAX: '00:00',
       REVSTDDAYNM: '이용일',
       REVSTDDAY: '2',
+      INDEX: 162,
     },
   ],
 };
