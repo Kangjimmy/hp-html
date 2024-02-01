@@ -1,0 +1,93 @@
+.title {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+.details {
+  margin: auto;
+  display: grid;
+  width: 100%;
+  height: 500px;
+  grid-template-columns: 5fr 5fr;
+}
+
+.details__img {
+  width: 100%;
+  height: 100%;
+  grid-row: span 2;
+  border-radius: 8px;
+}
+.details__contents {
+  padding: 0 1rem 0 3rem;
+}
+
+.li__svcnm {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1rem 0 5rem 0;
+}
+.li__detail {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid darkgray;
+}
+
+.li__span {
+  padding-right: 1.5rem;
+  font-weight: bold;
+}
+
+.details__btn {
+  padding: 0 1rem 0 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.details__btn__like > i {
+  color: #e85b6c;
+}
+.details__btn__like,
+.details__btn__link {
+  cursor: pointer;
+  font-size: 1.2rem;
+  background-color: white;
+  outline-style: none;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 100ms ease-in;
+  display: inline-block;
+}
+.details__btn__like {
+  margin-right: 0.5rem;
+  padding: 1rem 2rem;
+}
+.details__btn__link {
+  margin-left: 0.5rem;
+  padding: 1rem 5rem;
+}
+
+.details__btn__like:hover,
+.details__btn__link:hover {
+  background-color: rgb(235, 235, 235);
+  transform: scale(1.05) rotate(1deg);
+}
+
+.details__location {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.details__location__title {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.details__location__container {
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  height: 500px;
+}

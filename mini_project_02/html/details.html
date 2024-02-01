@@ -1,51 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>details</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poor+Story&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>세부목록</title>
   </head>
   <body>
+    <!-- header -->
     <header>
-      <div>로고</div>
-      <nav>
-        <ul>
-          <li>홈</li>
-          <li>체험목록</li>
-          <li>관심목록</li>
-        </ul>
-      </nav>
+      <div class="header__container">
+        <img class="header__logo" src="../img/logo.png" alt="logo" />
+        <nav>
+          <ul class="header__nav">
+            <li class="header__nav__li">Home</li>
+            <li class="header__nav__li">체험목록</li>
+            <li class="header__nav__li">관심목록</li>
+          </ul>
+        </nav>
+      </div>
     </header>
+    <!-- main -->
     <main>
       <section>
-        <h2>세부목록</h2>
+        <h2 class="title">세부목록</h2>
       </section>
+      <hr style="margin-bottom: 3rem" />
       <section>
-        <div>
-          <img src="" alt="" />
-          <div>
+        <div class="details max-container">
+          <img class="details__img" src="../img/test2.jpg" alt="" />
+          <div class="details__contents">
             <!-- 목록 -->
-            <ul>
-              <li>제목</li>
-              <li>내용1</li>
-              <li>내용2</li>
-              <li>내용3</li>
-              <li>내용4</li>
-              <li>내용5</li>
-              <li>
-                <button>관심</button>
-                <button>상세링크</button>
+            <ul class="details__contents__ul">
+              <li class="li__svcnm">
+                [주말]한의약박물관과 함께하는 마술쑈쑈쑈!!
+              </li>
+              <li class="li__detail">
+                <span class="li__span">기간</span>(SVCOPNBGNDT)~ (SVCOPNENDDT)
+              </li>
+              <li class="li__detail">
+                <span class="li__span">장소</span>(PLACENM)
+              </li>
+              <li class="li__detail">
+                <span class="li__span">연령</span>(USETGTINFO)
+              </li>
+              <li class="li__detail">
+                <span class="li__span">가격</span>(PAYATNM)
               </li>
             </ul>
           </div>
+          <div class="details__btn">
+            <button class="details__btn__like">
+              관심 <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="details__btn__link">상세링크</button>
+          </div>
         </div>
       </section>
-      <section>
-        <h3>장소 위치</h3>
-        <div>map 표시</div>
+      <section class="details__location max-container">
+        <h3 class="details__location__title">장소 위치</h3>
+        <div class="details__location__container"></div>
       </section>
     </main>
-    <footer>
+    <footer class="footer">
       <p>주소 : 서울특별시 서초구 서운로 220 6층 교육센터</p>
       <p>대표자 : 강인섭</p>
       <p>&copy All Rights Reserved</p>
