@@ -40,6 +40,7 @@ p {
 .header__container {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   align-items: center;
   padding: 1rem 2rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -69,6 +70,12 @@ p {
   border-bottom: 2px solid black;
 }
 
+.header__nav__menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 /* footer */
 .footer {
   background-color: black;
@@ -85,4 +92,13 @@ p {
 
 .footer > p {
   padding: 0.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav__menu {
+    display: inline;
+  }
+  .header__nav__li {
+    display: none;
+  }
 }
