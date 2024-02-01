@@ -51,6 +51,7 @@ main {
   width: 250px;
   height: 220px;
 }
+
 .ul__div > li {
   width: 100%;
   height: 100%;
@@ -65,4 +66,17 @@ main {
   height: 100%;
   background-color: rgb(169, 169, 169);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 1116px) {
+  .ul__div {
+    width: 160px;
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .exp__lists__ul {
+    flex-wrap: wrap;
+  }
 }

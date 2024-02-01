@@ -13,7 +13,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 2rem;
 }
 .interest__container__empty {
   text-align: center;
@@ -49,4 +49,17 @@ main {
   height: 100%;
   background-color: rgb(169, 169, 169);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 1116px) {
+  .ul__div {
+    width: 160px;
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .interest__lists__ul {
+    flex-wrap: wrap;
+  }
 }
