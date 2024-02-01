@@ -1,3 +1,4 @@
+/* basic settings */
 * {
   font-family: 'Nanum Gothic', sans-serif;
 }
@@ -28,6 +29,7 @@ p {
   max-width: 1400px;
 }
 
+/* header */
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -58,6 +60,10 @@ p {
   border-bottom: 2px solid black;
 }
 
+.main__container {
+  margin-bottom: 5rem;
+}
+
 .swiper__content {
   height: 40rem;
 }
@@ -69,6 +75,13 @@ p {
 }
 
 /* sub__contents */
+
+.sub__contents__title {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
 .sub__contents {
   margin: auto;
 }
@@ -108,6 +121,7 @@ p {
   gap: 1rem;
 }
 
+/* footer */
 .footer {
   background-color: black;
   color: white;
@@ -117,6 +131,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 5rem;
 }
 
 .footer > p {
