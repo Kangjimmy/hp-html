@@ -1,12 +1,8 @@
 'use strict';
 
-import { jsonData } from './json_data_index.js';
+import * as common from './common.js';
 
-const filterData = jsonData.filter((value) => {
-  if (value.SVCSTATNM == '접수중' || value.SVCSTATNM == '안내중') {
-    return true;
-  }
-});
+const filterData = common.getManagedData();
 
 const TITLE = [
   '공원탐방',
