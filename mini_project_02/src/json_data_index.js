@@ -5798,7 +5798,8 @@ export const jsonData = [
     RCPTBGNDT: '2022-03-18 00:00:00.0',
     RCPTENDDT: '',
     AREANM: '강남구',
-    IMGURL: '/cmsdata/web_upload/handwriting/20220322/XKMuvc.jpg',
+    IMGURL:
+      'https://img.freepik.com/free-vector/hand-drawn-fire-station-building-illustrated_23-2149128629.jpg',
     DTLCONT: '',
     TELNO: '02-3706-1319 ',
     V_MIN: '',
