@@ -6,7 +6,20 @@ const managedData = getManagedData();
 const expListsUl = document.querySelector('.exp__lists__ul');
 const footer = document.querySelector('.footer');
 const expLists = document.querySelector('.exp__lists');
+const expBtns = document.querySelectorAll('.exp__btns__btn');
+const [ALL, PARK, EDU, FARM, CULTURE, FOREST, CAFE, EXHIBITION] = [
+  'all',
+  'park',
+  'edu',
+  'farm',
+  'culture',
+  'forest',
+  'cafe',
+  'exhibition',
+];
 
+let observer;
+let btnClassification = ALL;
 const INITIAL_LENGTH = 15;
 let createIndex = 15;
 let len;
@@ -34,16 +47,33 @@ if (managedData.length < 15) {
   startObserve();
 }
 
+filterList(ALL);
+
+expBtns.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    const activeBtn = document.querySelector('.active');
+    activeBtn.classList.remove('active');
+    event.target.classList.add('active');
+
+    btnClassification = event.target.classList[1];
+    console.log(btnClassification);
+    filterList(btnClassification);
+
+    const test = document.querySelectorAll('.ul__div');
+    console.log(test);
+  });
+});
+
 function startObserve() {
   console.log('-- startObserve');
 
   let options = {
     root: null,
-    threshold: 0.99,
+    threshold: 0.3,
   };
 
   // options에 따라 인스턴스 생성
-  let observer = new IntersectionObserver(callback, options);
+  observer = new IntersectionObserver(callback, options);
 
   // 타겟 요소 관찰 시작
   observer.observe(getUlDivLastItem());
@@ -51,7 +81,15 @@ function startObserve() {
 
 function getUlDivLastItem() {
   const ulDiv = document.querySelectorAll('.ul__div');
-  return ulDiv[ulDiv.length - 1];
+  let displayNode;
+  for (let i = ulDiv.length - 1; i >= 0; i--) {
+    if (ulDiv[i].classList.length == 2) {
+      displayNode = ulDiv[i];
+      break;
+    }
+  }
+  console.log(displayNode);
+  return displayNode;
 }
 
 function callback(entries, observer) {
@@ -65,28 +103,25 @@ function callback(entries, observer) {
       } else {
         len = 15;
       }
-      // ... 콜백 로직
-      const loadingTag = createLoading();
-      loading(loadingTag);
-
-      setTimeout(() => {
-        const ulDivArr = [];
-        for (let i = createIndex; i < createIndex + len; i++) {
-          const ulNode = createUlDiv(managedData[i]);
-          ulDivArr.push(ulNode);
-        }
-        ulDivArr.forEach((item) => {
-          expListsUl.appendChild(item);
-        });
-        loadingTag.remove();
-        observer.unobserve(entry.target);
-        createIndex += len;
-        if (len > 14) {
-          observer.observe(getUlDivLastItem());
-        } else {
-          footer.classList.remove('disable');
-        }
-      }, 1200);
+      // 콜백 로직
+      // const loadingTag = createLoading();
+      // loading(loadingTag);
+      const ulDivArr = [];
+      for (let i = createIndex; i < createIndex + len; i++) {
+        const ulNode = createUlDiv(managedData[i]);
+        ulDivArr.push(ulNode);
+      }
+      ulDivArr.forEach((item) => {
+        expListsUl.appendChild(item);
+      });
+      // loadingTag.remove();
+      observer.unobserve(entry.target);
+      createIndex += len;
+      if (len > 14) {
+        observer.observe(getUlDivLastItem());
+      } else {
+        footer.classList.remove('disable');
+      }
     }
   });
 }
@@ -122,6 +157,8 @@ function createImg(data) {
 function createUlDiv(data) {
   const ulDiv = document.createElement('div');
   ulDiv.setAttribute('class', 'ul__div');
+  setClassification(ulDiv, data.MINCLASSNM);
+
   const liA = document.createElement('a');
   liA.setAttribute('class', 'li__a');
   liA.setAttribute('href', `./details.html?INDEX=${data.INDEX}`);
@@ -139,5 +176,87 @@ function createUlDiv(data) {
   liA.appendChild(ulDivMeta);
   ulDiv.appendChild(liA);
 
+  filterDiv(btnClassification, ulDiv);
   return ulDiv;
+}
+
+function setClassification(ulDiv, classification) {
+  let result;
+  switch (classification) {
+    case '공원탐방':
+      result = PARK;
+      break;
+    case '교육체험':
+      result = EDU;
+      break;
+    case '농장체험':
+      result = FARM;
+      break;
+    case '문화행사':
+      result = CULTURE;
+      break;
+    case '산림여가':
+      result = FOREST;
+      break;
+    case '서울형키즈카페':
+      result = CAFE;
+      break;
+    case '전시/관람':
+      result = EXHIBITION;
+      break;
+    default:
+      result = ALL;
+      break;
+  }
+  ulDiv.classList.add(result);
+}
+
+function filterDiv(activeBtn, ulDiv) {
+  const list = ulDiv.classList;
+  if (!(list[1] == activeBtn || activeBtn == ALL)) {
+    ulDiv.classList.add('hidden');
+  }
+}
+
+function filterList(activeBtn) {
+  const divUl = document.querySelectorAll('.ul__div');
+  let activeNode = null;
+  divUl.forEach((item) => {
+    const cl = item.classList;
+    if (cl.length == 3) {
+      cl.remove('hidden');
+    }
+    if (cl[1] != activeBtn && activeBtn != ALL) {
+      cl.add('hidden');
+    }
+  });
+
+  while (activeNode == null) {
+    const divUl2 = document.querySelectorAll('.ul__div');
+    for (let i = 0; i < divUl2.length; i++) {
+      if (divUl2[i].classList.length != 3) {
+        activeNode = divUl2[i];
+        break;
+      }
+    }
+
+    if (activeNode == null) {
+      dataLength -= 15;
+      if (dataLength < 15) {
+        len = dataLength;
+      } else {
+        len = 15;
+      }
+      const ulDivArr = [];
+      for (let i = createIndex; i < createIndex + len; i++) {
+        const ulNode = createUlDiv(managedData[i]);
+        ulDivArr.push(ulNode);
+      }
+      ulDivArr.forEach((item) => {
+        expListsUl.appendChild(item);
+      });
+      createIndex += len;
+    }
+  }
+  observer.observe(getUlDivLastItem());
 }
