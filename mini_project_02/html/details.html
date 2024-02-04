@@ -17,6 +17,10 @@
       src="https://kit.fontawesome.com/4d584d86c5.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dc9280eb8c689eb3e423278b79ecff5a"
+    ></script>
     <script type="module" src="../src/details.js" defer></script>
     <script type="module" src="../src/main.js" defer></script>
     <title>세부목록</title>
@@ -79,13 +83,15 @@
             <button class="details__btn__like">
               관심 <i class="fa-regular fa-heart"></i>
             </button>
-            <button class="details__btn__link">상세링크</button>
+            <button class="details__btn__link">
+              <a href="" target="_blank">상세링크</a>
+            </button>
           </div>
         </div>
       </section>
       <section class="details__location max-container">
         <h3 class="details__location__title">장소 위치</h3>
-        <div class="details__location__container"></div>
+        <div class="details__location__container" id="map"></div>
       </section>
     </main>
     <footer class="footer">
