@@ -8,7 +8,6 @@
   margin: auto;
   display: grid;
   width: 100%;
-  height: 500px;
   grid-template-columns: 5fr 5fr;
 }
 
@@ -130,6 +129,18 @@
   }
 }
 @media screen and (max-width: 962px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .details__btn__like {
+    margin-right: 0;
+  }
+  .details__btn__link {
+    margin-left: 0;
+  }
+  .details__contents__ul {
+    margin-top: 2rem;
+  }
   .li__svcnm {
     font-size: 1.5rem;
     padding: 1rem 0 3rem 0;
@@ -143,6 +154,19 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .details__btn__like {
+    margin-right: 0;
+  }
+  .details__btn__link {
+    margin-left: 0;
+  }
+  .details__contents__ul {
+    margin-top: 2rem;
+  }
+
   .details__div {
     margin-left: 0.5rem;
   }
