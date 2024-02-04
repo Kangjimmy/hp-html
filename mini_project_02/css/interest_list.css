@@ -14,6 +14,7 @@ main {
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  margin: 0 1rem;
 }
 .interest__container__empty {
   text-align: center;
@@ -27,13 +28,14 @@ main {
 .interest__lists__ul {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .ul__div {
   position: relative;
-  width: 250px;
-  height: 220px;
+  width: 350px;
+  height: 320px;
 }
 .ul__div > li {
   width: 100%;
@@ -53,8 +55,8 @@ main {
 
 @media screen and (max-width: 1116px) {
   .ul__div {
-    width: 160px;
-    height: 130px;
+    width: 250px;
+    height: 220px;
   }
 }
 
