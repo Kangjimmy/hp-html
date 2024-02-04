@@ -92,7 +92,7 @@
 }
 
 .details__location__title {
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -101,6 +101,7 @@
   border: 1px solid darkgray;
   border-radius: 4px;
   height: 500px;
+  margin: 0 1rem;
 }
 
 @media screen and (max-width: 1400px) {
