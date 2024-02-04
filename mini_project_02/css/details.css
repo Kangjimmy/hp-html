@@ -24,6 +24,9 @@
   justify-content: center;
   align-items: center;
 }
+.details__contents__ul {
+  width: 100%;
+}
 .details__img {
   width: 695px;
   height: 500px;
