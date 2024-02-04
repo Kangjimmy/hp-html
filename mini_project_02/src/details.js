@@ -38,6 +38,29 @@ function getIndexData(dataArr, index) {
   return dataArr.find((item) => item.INDEX == index);
 }
 
+const detailsBtnLike = document.querySelector('.details__btn__like');
+detailsBtnLike.addEventListener('click', () => {
+  let output = localStorage.getItem('likeArr');
+  if (output === null) {
+    const likeArr = [];
+    likeArr.push(indexData.INDEX);
+    localStorage.setItem('likeArr', JSON.stringify(likeArr));
+  } else {
+    const likeArr = JSON.parse(output);
+    if (likeArr.indexOf(indexData.INDEX) == -1) {
+      if (likeArr.length >= 8) {
+        alert('관심목록은 8개까지 등록이 가능합니다.');
+      } else {
+        likeArr.push(indexData.INDEX);
+        localStorage.setItem('likeArr', JSON.stringify(likeArr));
+      }
+    }
+  }
+});
+
+// --------------------
+// ----- 지도 생성 ------
+// --------------------
 const mapContainer = document.getElementById('map'), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(indexData.Y, indexData.X), // 지도의 중심좌표
