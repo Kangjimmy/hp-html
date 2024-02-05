@@ -17,10 +17,7 @@ if (output === null) {
 }
 
 if (likeIndexArr.length == 0) {
-  interestContainer.innerHTML = `
-  <span class="interest__container__empty x">❌</span>
-  <span class="interest__container__empty">목록이 없습니다</span>
-  `;
+  drawEmptyList();
 } else {
   likeIndexArr.forEach((index) => {
     likeArr.push(
@@ -39,21 +36,18 @@ if (likeIndexArr.length == 0) {
   loading(loadingTag);
 
   const interval = setInterval(() => {
-    if (loadCount == likeIndexArr.length) {
+    if (loadCount >= likeIndexArr.length) {
       console.log('--interval finish--');
       if (loadingTag != null) {
         loadingTag.remove();
       }
       interestContainer.classList.add('active');
       interestListsUl.classList.add('active');
+      setVisibilityCancelButton();
       clearInterval(interval);
     } else {
     }
   }, 100);
-}
-
-function getIndexData(dataArr, index) {
-  return dataArr.find((item) => item.INDEX == index);
 }
 
 function createUlDiv(data) {
@@ -81,12 +75,42 @@ function createUlDiv(data) {
   ulDivMeta.setAttribute('class', 'ul__div__meta');
   ulDivMeta.innerHTML = data.SVCNM;
 
+  const ulDivCancel = document.createElement('button');
+  ulDivCancel.setAttribute('class', 'ul__div__cancel');
+  ulDivCancel.innerHTML = `<i class="fa-solid fa-x"></i>`;
+
+  ulDivCancel.addEventListener('click', () => {
+    const index = likeIndexArr.indexOf(data.INDEX);
+    likeIndexArr.splice(index, 1);
+    localStorage.setItem('likeArr', JSON.stringify(likeIndexArr));
+    ulDiv.remove();
+    if (likeIndexArr.length == 0) {
+      drawEmptyList();
+    }
+  });
+
   ulDivLi.appendChild(ulDivLiImg);
   liA.appendChild(ulDivLi);
   liA.appendChild(ulDivMeta);
+  ulDiv.appendChild(ulDivCancel);
   ulDiv.appendChild(liA);
 
   interestListsUl.appendChild(ulDiv);
+}
+
+function setVisibilityCancelButton() {
+  let ulDivArr = document.querySelectorAll('.ul__div');
+
+  ulDivArr.forEach((item) => {
+    item.addEventListener('mouseover', () => {
+      const cancelButton = item.querySelector('.ul__div__cancel');
+      cancelButton.style.visibility = 'visible';
+    });
+    item.addEventListener('mouseout', () => {
+      const cancelButton = item.querySelector('.ul__div__cancel');
+      cancelButton.style.visibility = 'hidden';
+    });
+  });
 }
 
 function createLoading() {
@@ -106,4 +130,12 @@ function createLoading() {
 }
 function loading(loadingTag) {
   interestContainer.appendChild(loadingTag);
+}
+
+function drawEmptyList() {
+  interestContainer.innerHTML += `
+  <span class="interest__container__empty x">❌</span>
+  <span class="interest__container__empty">목록이 없습니다</span>
+  `;
+  interestContainer.classList.remove('active');
 }
