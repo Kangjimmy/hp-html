@@ -1,24 +1,27 @@
 'use strict';
 
 import { getManagedData } from './common.js';
-const output = localStorage.getItem('likeArr');
 const interestContainer = document.querySelector('.interest__container');
 const interestListsUl = document.querySelector('.interest__lists__ul');
 const jsonData = getManagedData();
 let loadCount = document.querySelectorAll('.ul__div').length;
-let likeArrLength = 0;
-let loadingTag = null;
 
+let likeArr = [];
+let loadingTag = null;
+const output = localStorage.getItem('likeArr');
+let likeIndexArr = null;
 if (output === null) {
-  interestContainer.innerHTML += `
+  likeIndexArr = [];
+} else {
+  likeIndexArr = JSON.parse(output);
+}
+
+if (likeIndexArr.length == 0) {
+  interestContainer.innerHTML = `
   <span class="interest__container__empty x">❌</span>
   <span class="interest__container__empty">목록이 없습니다</span>
   `;
 } else {
-  const likeIndexArr = JSON.parse(output);
-  likeArrLength = likeIndexArr.length;
-  const likeArr = [];
-
   likeIndexArr.forEach((index) => {
     likeArr.push(
       jsonData.find((data) => {
@@ -34,20 +37,20 @@ if (output === null) {
   });
   loadingTag = createLoading();
   loading(loadingTag);
-}
 
-const interval = setInterval(() => {
-  if (loadCount == likeArrLength) {
-    console.log('--interval finish--');
-    if (loadingTag != null) {
-      loadingTag.remove();
+  const interval = setInterval(() => {
+    if (loadCount == likeIndexArr.length) {
+      console.log('--interval finish--');
+      if (loadingTag != null) {
+        loadingTag.remove();
+      }
+      interestContainer.classList.add('active');
+      interestListsUl.classList.add('active');
+      clearInterval(interval);
+    } else {
     }
-    interestContainer.classList.add('active');
-    interestListsUl.classList.add('active');
-    clearInterval(interval);
-  } else {
-  }
-}, 100);
+  }, 100);
+}
 
 function getIndexData(dataArr, index) {
   return dataArr.find((item) => item.INDEX == index);

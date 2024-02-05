@@ -4,6 +4,10 @@
   font-size: 2rem;
 }
 
+.section__hr {
+  margin-bottom: 6rem;
+}
+
 main {
   min-height: 600px;
   margin: 0 1rem;
