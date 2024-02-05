@@ -112,6 +112,7 @@ const map = new kakao.maps.Map(mapContainer, mapOption);
 
 // 마커가 표시될 위치입니다
 const markerPosition = new kakao.maps.LatLng(indexData.Y, indexData.X);
+const coord = new kakao.maps.LatLng(indexData.Y, indexData.X);
 
 // 마커를 생성합니다
 const marker = new kakao.maps.Marker({
@@ -120,3 +121,29 @@ const marker = new kakao.maps.Marker({
 
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);
+
+// 주소-좌표 변환 객체를 생성합니다
+const geocoder = new kakao.maps.services.Geocoder();
+const detailsLocationAddress = document.querySelector(
+  '.location__address__div'
+);
+searchDetailAddrFromCoords(coord, function (result, status) {
+  if (status === kakao.maps.services.Status.OK) {
+    var detailAddr = !!result[0].road_address
+      ? '<div class="location__address__div__address">도로명주소 : ' +
+        result[0].road_address.address_name +
+        '</div>'
+      : '';
+    detailAddr +=
+      '<div class="location__address__div__address">지번 주소 : ' +
+      result[0].address.address_name +
+      '</div>';
+
+    detailsLocationAddress.innerHTML = detailAddr;
+  }
+});
+
+function searchDetailAddrFromCoords(coords, callback) {
+  // 좌표로 법정동 상세 주소 정보를 요청합니다
+  geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+}

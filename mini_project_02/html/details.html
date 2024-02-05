@@ -17,9 +17,10 @@
       src="https://kit.fontawesome.com/4d584d86c5.js"
       crossorigin="anonymous"
     ></script>
+
     <script
       type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dc9280eb8c689eb3e423278b79ecff5a"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dc9280eb8c689eb3e423278b79ecff5a&libraries=services"
     ></script>
     <script type="module" src="../src/details.js" defer></script>
     <script type="module" src="../src/main.js" defer></script>
@@ -87,6 +88,7 @@
       </section>
       <section class="details__location max-container">
         <h3 class="details__location__title">장소 위치</h3>
+        <div class="location__address__div"></div>
         <div class="details__location__container" id="map"></div>
       </section>
     </main>
