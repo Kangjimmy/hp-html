@@ -3,6 +3,7 @@
 import { getManagedData, filterData, FilterType } from './common.js';
 
 const managedData = getManagedData();
+
 const expListsUl = document.querySelector('.exp__lists__ul');
 const footer = document.querySelector('.footer');
 const expLists = document.querySelector('.exp__lists');
@@ -18,36 +19,16 @@ const [ALL, PARK, EDU, FARM, CULTURE, FOREST, CAFE, EXHIBITION] = [
   'exhibition',
 ];
 
+let selectedData = managedData;
 let observer;
 let btnClassification = ALL;
 const INITIAL_LENGTH = 15;
 let createIndex = 15;
 let len;
-let dataLength = managedData.length;
+let dataLength = selectedData.length;
 
-if (managedData.length < 15) {
-  const ulDivArr = [];
-  managedData.forEach((value) => {
-    ulDivArr.push(createImg(value));
-  });
-  ulDivArr.forEach((item) => {
-    expListsUl.appendChild(item);
-  });
-} else {
-  const ulDivArr = [];
-  footer.classList.add('disable');
-  len = 15;
-  for (let i = 0; i < INITIAL_LENGTH; i++) {
-    const ulNode = createUlDiv(managedData[i]);
-    ulDivArr.push(ulNode);
-  }
-  ulDivArr.forEach((item) => {
-    expListsUl.appendChild(item);
-  });
-  startObserve();
-}
-
-filterList(ALL);
+initDataList(selectedData);
+// filterList(ALL);
 
 expBtns.forEach((btn) => {
   btn.addEventListener('click', (event) => {
@@ -57,19 +38,79 @@ expBtns.forEach((btn) => {
 
     btnClassification = event.target.classList[1];
     console.log(btnClassification);
-    filterList(btnClassification);
-
-    const test = document.querySelectorAll('.ul__div');
-    console.log(test);
+    // filterList(btnClassification);
+    selectedData = getSelectedData(btnClassification);
+    console.log(selectedData);
+    dataLength = selectedData.length;
+    createIndex = 15;
+    initDataList(selectedData);
   });
 });
+
+function initDataList(selectedData) {
+  expListsUl.innerHTML = '';
+  if (selectedData.length < 15) {
+    const ulDivArr = [];
+    selectedData.forEach((value) => {
+      const ulNode = createUlDiv(value);
+      ulDivArr.push(ulNode);
+    });
+    ulDivArr.forEach((item) => {
+      expListsUl.appendChild(item);
+    });
+    footer.classList.remove('disable');
+  } else {
+    const ulDivArr = [];
+    footer.classList.add('disable');
+    len = 15;
+    for (let i = 0; i < INITIAL_LENGTH; i++) {
+      const ulNode = createUlDiv(selectedData[i]);
+      ulDivArr.push(ulNode);
+    }
+    ulDivArr.forEach((item) => {
+      expListsUl.appendChild(item);
+    });
+    startObserve();
+  }
+}
+
+function getSelectedData(btnClassification) {
+  let selectedData = null;
+  switch (btnClassification) {
+    case PARK:
+      selectedData = filterData(managedData, FilterType.park);
+      break;
+    case EDU:
+      selectedData = filterData(managedData, FilterType.edu);
+      break;
+    case FARM:
+      selectedData = filterData(managedData, FilterType.farm);
+      break;
+    case CULTURE:
+      selectedData = filterData(managedData, FilterType.culture);
+      break;
+    case FOREST:
+      selectedData = filterData(managedData, FilterType.forest);
+      break;
+    case CAFE:
+      selectedData = filterData(managedData, FilterType.cafe);
+      break;
+    case EXHIBITION:
+      selectedData = filterData(managedData, FilterType.exhibition);
+      break;
+    default:
+      selectedData = managedData;
+      break;
+  }
+  return selectedData;
+}
 
 function startObserve() {
   console.log('-- startObserve');
 
   let options = {
     root: null,
-    threshold: 0.3,
+    threshold: 0.9,
   };
 
   // options에 따라 인스턴스 생성
@@ -81,15 +122,7 @@ function startObserve() {
 
 function getUlDivLastItem() {
   const ulDiv = document.querySelectorAll('.ul__div');
-  let displayNode;
-  for (let i = ulDiv.length - 1; i >= 0; i--) {
-    if (ulDiv[i].classList.length == 2) {
-      displayNode = ulDiv[i];
-      break;
-    }
-  }
-  console.log(displayNode);
-  return displayNode;
+  return ulDiv[ulDiv.length - 1];
 }
 
 function callback(entries, observer) {
@@ -97,6 +130,7 @@ function callback(entries, observer) {
     // isIntersecting을 사용
 
     if (entry.isIntersecting) {
+      console.log(entry);
       dataLength -= 15;
       if (dataLength < 15) {
         len = dataLength;
@@ -108,7 +142,7 @@ function callback(entries, observer) {
       // loading(loadingTag);
       const ulDivArr = [];
       for (let i = createIndex; i < createIndex + len; i++) {
-        const ulNode = createUlDiv(managedData[i]);
+        const ulNode = createUlDiv(selectedData[i]);
         ulDivArr.push(ulNode);
       }
       ulDivArr.forEach((item) => {
@@ -155,6 +189,7 @@ function createImg(data) {
 }
 
 function createUlDiv(data) {
+  console.log(data);
   const ulDiv = document.createElement('div');
   ulDiv.setAttribute('class', 'ul__div');
   setClassification(ulDiv, data.MINCLASSNM);
@@ -176,7 +211,6 @@ function createUlDiv(data) {
   liA.appendChild(ulDivMeta);
   ulDiv.appendChild(liA);
 
-  filterDiv(btnClassification, ulDiv);
   return ulDiv;
 }
 
@@ -209,54 +243,4 @@ function setClassification(ulDiv, classification) {
       break;
   }
   ulDiv.classList.add(result);
-}
-
-function filterDiv(activeBtn, ulDiv) {
-  const list = ulDiv.classList;
-  if (!(list[1] == activeBtn || activeBtn == ALL)) {
-    ulDiv.classList.add('hidden');
-  }
-}
-
-function filterList(activeBtn) {
-  const divUl = document.querySelectorAll('.ul__div');
-  let activeNode = null;
-  divUl.forEach((item) => {
-    const cl = item.classList;
-    if (cl.length == 3) {
-      cl.remove('hidden');
-    }
-    if (cl[1] != activeBtn && activeBtn != ALL) {
-      cl.add('hidden');
-    }
-  });
-
-  while (activeNode == null) {
-    const divUl2 = document.querySelectorAll('.ul__div');
-    for (let i = 0; i < divUl2.length; i++) {
-      if (divUl2[i].classList.length != 3) {
-        activeNode = divUl2[i];
-        break;
-      }
-    }
-
-    if (activeNode == null) {
-      dataLength -= 15;
-      if (dataLength < 15) {
-        len = dataLength;
-      } else {
-        len = 15;
-      }
-      const ulDivArr = [];
-      for (let i = createIndex; i < createIndex + len; i++) {
-        const ulNode = createUlDiv(managedData[i]);
-        ulDivArr.push(ulNode);
-      }
-      ulDivArr.forEach((item) => {
-        expListsUl.appendChild(item);
-      });
-      createIndex += len;
-    }
-  }
-  observer.observe(getUlDivLastItem());
 }

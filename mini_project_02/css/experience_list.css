@@ -56,24 +56,6 @@ main {
   width: 350px;
   height: 320px;
 }
-.ul__div.park.show,
-.ul__div.edu.show,
-.ul__div.farm.show,
-.ul__div.culture.show,
-.ul__div.forest.show,
-.ul__div.cafe.show,
-.ul__div.exhibition.show {
-  display: block;
-}
-.ul__div.park.hidden,
-.ul__div.edu.hidden,
-.ul__div.farm.hidden,
-.ul__div.culture.hidden,
-.ul__div.forest.hidden,
-.ul__div.cafe.hidden,
-.ul__div.exhibition.hidden {
-  display: none;
-}
 
 .ul__div__li {
   width: 100%;

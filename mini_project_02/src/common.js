@@ -3,13 +3,13 @@
 import { jsonData } from './json_data_index.js';
 
 export const FilterType = Object.freeze({
-  공원탐방: '공원탐방',
-  교육체험: '교육체험',
-  농장체험: '농장체험',
-  문화행사: '문화행사',
-  산림여가: '산림여가',
-  키즈카페: '서울형키즈카페',
-  전시_관람: '전시/관람',
+  park: '공원탐방',
+  edu: '교육체험',
+  farm: '농장체험',
+  culture: '문화행사',
+  forest: '산림여가',
+  cafe: '서울형키즈카페',
+  exhibition: '전시/관람',
 });
 
 /**
@@ -25,17 +25,22 @@ export function getManagedData() {
 
   return managedData;
 }
+
+/**
+ *
+ * @param {*} data - getManagedData를 통해서 걸러진(예약종료, 접수종료된 데이터를 제외시키기 위함) 데이터를 파라미터로 넣는다.
+ * @param {*} FilterType
+ * @returns 소행사분류에 따라 필터처리된 데이터
+ */
 export function filterData(data, FilterType) {
   const type = FilterType;
 
   let filterData;
-  if (type != FilterType.managed) {
-    filterData = data.filter((value) => {
-      if (value.MINCLASSNM == type) {
-        return true;
-      }
-    });
-  }
+  filterData = data.filter((value) => {
+    if (value.MINCLASSNM == type) {
+      return true;
+    }
+  });
 
   return filterData;
 }
