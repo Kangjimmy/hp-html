@@ -79,17 +79,18 @@
 .details__btn__link {
   margin-left: 0.5rem;
   padding: 1rem 3rem;
+  text-align: center;
 }
 
 .details__btn__like:hover,
 .details__btn__link:hover {
   background-color: rgb(235, 235, 235);
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.02) rotate(0.5deg);
 }
 .details__btn__like:active,
 .details__btn__link:active {
   background-color: rgb(190, 190, 190);
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.02) rotate(0.5deg);
 }
 
 .details__location {
@@ -139,9 +140,11 @@
   }
   .details__btn__like {
     margin-right: 0;
+    width: 80%;
   }
   .details__btn__link {
     margin-left: 0;
+    width: 80%;
   }
   .details__contents__ul {
     margin-top: 2rem;
@@ -183,11 +186,6 @@
     padding: 1rem 0 1.5rem 0;
   }
   .li__detail {
-    font-size: 0.8rem;
-  }
-
-  .details__btn__like,
-  .details__btn__link {
     font-size: 0.8rem;
   }
 }
