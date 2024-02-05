@@ -16,7 +16,7 @@ const liSvcopn = document.querySelector('.li__svcopn');
 const liPlacenm = document.querySelector('.li__placenm');
 const liUsetgtinfo = document.querySelector('.li__usetgtinfo');
 const liPayatnm = document.querySelector('.li__payatnm');
-const detailsBtnLink = document.querySelector('.details__btn__link > a');
+const detailsBtnLink = document.querySelector('.details__btn__link');
 
 const [SVCOPN, PLACENM, USETGTINFO, PAYATNM] = [
   `${indexData.SVCOPNBGNDT.substr(0, 10)} ~ ${indexData.SVCOPNENDDT.substr(
