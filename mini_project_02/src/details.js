@@ -17,6 +17,15 @@ const liPlacenm = document.querySelector('.li__placenm');
 const liUsetgtinfo = document.querySelector('.li__usetgtinfo');
 const liPayatnm = document.querySelector('.li__payatnm');
 const detailsBtnLink = document.querySelector('.details__btn__link');
+const detailsBtnLike = document.querySelector('.details__btn__like');
+
+let output = localStorage.getItem('likeArr');
+let likeArr = null;
+if (output === null) {
+  likeArr = [];
+} else {
+  likeArr = JSON.parse(output);
+}
 
 const [SVCOPN, PLACENM, USETGTINFO, PAYATNM] = [
   `${indexData.SVCOPNBGNDT.substr(0, 10)} ~ ${indexData.SVCOPNENDDT.substr(
@@ -33,30 +42,61 @@ liUsetgtinfo.innerHTML = USETGTINFO;
 liPayatnm.innerHTML = PAYATNM;
 
 detailsBtnLink.setAttribute('href', indexData.SVCURL);
+drawHeart(detailsBtnLike);
+
+detailsBtnLike.addEventListener('click', () => {
+  if (likeArr.length == 0) {
+    likeArr.push(indexData.INDEX);
+    localStorage.setItem('likeArr', JSON.stringify(likeArr));
+    fillLike();
+  } else {
+    let i = likeArr.indexOf(indexData.INDEX);
+    if (i == -1) {
+      if (likeArr.length >= 8) {
+        // 목록에 추가하는데 8개이상이 등록되어있으면 등록하지 않도록
+        alert('관심목록은 8개까지 등록이 가능합니다.');
+      } else {
+        // 목록에 없는경우 목록에 추가하고, 하트가 채워지도록
+        likeArr.push(indexData.INDEX);
+        localStorage.setItem('likeArr', JSON.stringify(likeArr));
+        fillLike();
+      }
+    } else {
+      // 목록에 있는경우 목록에서 삭제하고, 하트가 지워지도록
+      likeArr.splice(i, 1);
+      localStorage.setItem('likeArr', JSON.stringify(likeArr));
+      emptyLike();
+    }
+  }
+});
+
+function drawHeart(node) {
+  console.log('-drawHeart-');
+  node.innerHTML += ' ';
+
+  if (likeArr.length == 0) {
+    node.innerHTML += `<i class="fa-regular fa-heart"></i>`;
+  } else {
+    if (likeArr.indexOf(indexData.INDEX) != -1) {
+      node.innerHTML += `<i class="fa-solid fa-heart"></i>`;
+    } else {
+      node.innerHTML += `<i class="fa-regular fa-heart"></i>`;
+    }
+  }
+}
 
 function getIndexData(dataArr, index) {
   return dataArr.find((item) => item.INDEX == index);
 }
 
-const detailsBtnLike = document.querySelector('.details__btn__like');
-detailsBtnLike.addEventListener('click', () => {
-  let output = localStorage.getItem('likeArr');
-  if (output === null) {
-    const likeArr = [];
-    likeArr.push(indexData.INDEX);
-    localStorage.setItem('likeArr', JSON.stringify(likeArr));
-  } else {
-    const likeArr = JSON.parse(output);
-    if (likeArr.indexOf(indexData.INDEX) == -1) {
-      if (likeArr.length >= 8) {
-        alert('관심목록은 8개까지 등록이 가능합니다.');
-      } else {
-        likeArr.push(indexData.INDEX);
-        localStorage.setItem('likeArr', JSON.stringify(likeArr));
-      }
-    }
-  }
-});
+function fillLike() {
+  const likeIcon = document.querySelector('.details__btn__like > i');
+  likeIcon.classList.replace('fa-regular', 'fa-solid');
+}
+function emptyLike() {
+  const likeIcon = document.querySelector('.details__btn__like > i');
+  likeIcon.classList.replace('fa-solid', 'fa-regular');
+}
 
 // --------------------
 // ----- 지도 생성 ------
