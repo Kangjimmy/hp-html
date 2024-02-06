@@ -3,7 +3,7 @@
 import { getManagedData, filterData, FilterType } from './common.js';
 
 const managedData = getManagedData();
-
+console.log('managedData length : ', managedData.length);
 const expListsUl = document.querySelector('.exp__lists__ul');
 const footer = document.querySelector('.footer');
 const expLists = document.querySelector('.exp__lists');
@@ -19,6 +19,7 @@ const [ALL, PARK, EDU, FARM, CULTURE, FOREST, CAFE, EXHIBITION] = [
   'exhibition',
 ];
 
+let loadingNode = createLoading();
 let selectedData = managedData;
 let observer;
 let btnClassification = ALL;
@@ -26,23 +27,29 @@ const INITIAL_LENGTH = 15;
 let createIndex = 15;
 let len;
 let dataLength = selectedData.length;
+let loadingCount = 0;
+let ulDivArr = [];
+let dataEndCount = 0;
 
+startObserve();
 initDataList(selectedData);
-// filterList(ALL);
 
+/**
+ * 체험목록의 버튼을 누를경우
+ */
 expBtns.forEach((btn) => {
   btn.addEventListener('click', (event) => {
     const activeBtn = document.querySelector('.active');
     activeBtn.classList.remove('active');
     event.target.classList.add('active');
-
+    removeLoadingNode();
     btnClassification = event.target.classList[1];
-    console.log(btnClassification);
-    // filterList(btnClassification);
     selectedData = getSelectedData(btnClassification);
-    console.log(selectedData);
+    console.log('selected Data length: ', selectedData.length);
     dataLength = selectedData.length;
     createIndex = 15;
+    dataEndCount = 0;
+    loadingCount = 0;
     initDataList(selectedData);
   });
 });
@@ -50,28 +57,56 @@ expBtns.forEach((btn) => {
 function initDataList(selectedData) {
   expListsUl.innerHTML = '';
   if (selectedData.length < 15) {
-    const ulDivArr = [];
+    ulDivArr = [];
+    len = selectedData.length;
     selectedData.forEach((value) => {
-      const ulNode = createUlDiv(value);
+      const ulNode = createUlDiv(value, createImg);
       ulDivArr.push(ulNode);
     });
     ulDivArr.forEach((item) => {
       expListsUl.appendChild(item);
     });
     footer.classList.remove('disable');
+    showUlDiv();
   } else {
-    const ulDivArr = [];
+    ulDivArr = [];
     footer.classList.add('disable');
     len = 15;
     for (let i = 0; i < INITIAL_LENGTH; i++) {
-      const ulNode = createUlDiv(selectedData[i]);
+      const ulNode = createUlDiv(selectedData[i], createImg);
       ulDivArr.push(ulNode);
     }
     ulDivArr.forEach((item) => {
       expListsUl.appendChild(item);
     });
-    startObserve();
+    showUlDiv();
+    dataEndCount += len;
+    observer.observe(getUlDivLastItem());
   }
+}
+
+function checkImgLoad() {
+  console.log('checkImgLoad chceck');
+  loadingNode = createLoading();
+  loading(loadingNode);
+
+  const imgLoadInterval = setInterval(() => {
+    if (loadingCount >= len) {
+      loadingNode.remove();
+
+      showUlDiv();
+
+      dataEndCount += loadingCount;
+      loadingCount = 0;
+      console.log('dataEndCount: ', dataEndCount);
+      console.log('selectedData.length: ', selectedData.length);
+
+      if (dataEndCount < selectedData.length) {
+        observer.observe(getUlDivLastItem());
+      }
+      clearInterval(imgLoadInterval);
+    }
+  }, 50);
 }
 
 function getSelectedData(btnClassification) {
@@ -106,18 +141,23 @@ function getSelectedData(btnClassification) {
 }
 
 function startObserve() {
-  console.log('-- startObserve');
-
+  console.log('len : ', len);
+  console.log('loadingCount : ', loadingCount);
   let options = {
     root: null,
-    threshold: 0.9,
+    threshold: 0.2,
   };
 
   // options에 따라 인스턴스 생성
   observer = new IntersectionObserver(callback, options);
+}
 
-  // 타겟 요소 관찰 시작
-  observer.observe(getUlDivLastItem());
+function removeLoadingNode() {
+  const dotSection = document.querySelector('.dot--section');
+
+  if (dotSection != null) {
+    dotSection.remove();
+  }
 }
 
 function getUlDivLastItem() {
@@ -137,27 +177,32 @@ function callback(entries, observer) {
       } else {
         len = 15;
       }
-      // 콜백 로직
-      // const loadingTag = createLoading();
-      // loading(loadingTag);
-      const ulDivArr = [];
+      ulDivArr = [];
       for (let i = createIndex; i < createIndex + len; i++) {
-        const ulNode = createUlDiv(selectedData[i]);
+        const ulNode = createUlDiv(selectedData[i], createImgOnload);
         ulDivArr.push(ulNode);
       }
       ulDivArr.forEach((item) => {
         expListsUl.appendChild(item);
       });
-      // loadingTag.remove();
       observer.unobserve(entry.target);
       createIndex += len;
       if (len > 14) {
-        observer.observe(getUlDivLastItem());
+        checkImgLoad();
       } else {
         footer.classList.remove('disable');
+        checkImgLoad();
       }
     }
   });
+}
+
+function showUlDiv() {
+  if (ulDivArr.length != 0) {
+    ulDivArr.forEach((item) => {
+      item.classList.remove('hidden');
+    });
+  }
 }
 
 function createLoading() {
@@ -179,17 +224,29 @@ function loading(loadingTag) {
   expLists.appendChild(loadingTag);
 }
 
+function createImgOnload(data) {
+  const ulDivLiImg = document.createElement('img');
+  ulDivLiImg.setAttribute('class', 'ul__div__li__img');
+  ulDivLiImg.setAttribute('loading', 'lazy');
+  ulDivLiImg.setAttribute('alt', `${data.MINCLASSNM} img`);
+  ulDivLiImg.setAttribute('src', `${data.IMGURL}`);
+  ulDivLiImg.onload = () => {
+    loadingCount++;
+    console.log('loadingCount: ', loadingCount);
+  };
+  return ulDivLiImg;
+}
 function createImg(data) {
   const ulDivLiImg = document.createElement('img');
   ulDivLiImg.setAttribute('class', 'ul__div__li__img');
   ulDivLiImg.setAttribute('loading', 'lazy');
   ulDivLiImg.setAttribute('alt', `${data.MINCLASSNM} img`);
   ulDivLiImg.setAttribute('src', `${data.IMGURL}`);
+
   return ulDivLiImg;
 }
 
-function createUlDiv(data) {
-  console.log(data);
+function createUlDiv(data, createImg) {
   const ulDiv = document.createElement('div');
   ulDiv.setAttribute('class', 'ul__div');
   setClassification(ulDiv, data.MINCLASSNM);
@@ -210,6 +267,7 @@ function createUlDiv(data) {
   liA.appendChild(ulDivLi);
   liA.appendChild(ulDivMeta);
   ulDiv.appendChild(liA);
+  ulDiv.classList.add('hidden');
 
   return ulDiv;
 }

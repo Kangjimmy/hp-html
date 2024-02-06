@@ -57,6 +57,11 @@ main {
   height: 320px;
 }
 
+.ul__div.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
 .ul__div__li {
   width: 100%;
   height: 100%;
