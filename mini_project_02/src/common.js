@@ -1,6 +1,5 @@
 'use strict';
-
-import { jsonData } from './json_data_index.js';
+import jsonData from './dataSeoul.json' assert { type: 'json' };
 
 export const FilterType = Object.freeze({
   park: '공원탐방',
