@@ -1,9 +1,9 @@
 'use strict';
 
-import { data } from './swiper_data.js';
+import data from './swiper_data.json' assert { type: 'json' };
 
-const dataArr = data.contents;
-const swiperColor = ['#FFFFF3', '#B8E5E0', '#E1F5FC', '#FFFFFF', '#F8E1B7'];
+const dataArr = data;
+const swiperColor = ['#C1C2D3', '#EBCFCC', '#E95F98', '#FFFFFF', '#000306'];
 
 const swiperContents = document.querySelectorAll('.swiper__content');
 const swiperContentDate = document.querySelectorAll('.swiper__content__date');
