@@ -1,0 +1,152 @@
+.title {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+.section__hr {
+  margin-bottom: 6rem;
+}
+
+main {
+  min-height: 600px;
+  margin: 0 1rem;
+}
+
+.interest__container {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  height: 200px;
+}
+.interest__container.active {
+  height: 100%;
+}
+.interest__container__empty {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.interest__container__empty.x {
+  font-size: 7rem;
+}
+
+.interest__lists__ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  opacity: 0;
+}
+
+.interest__lists__ul.active {
+  opacity: 1;
+}
+
+.ul__div {
+  position: relative;
+  width: 350px;
+  height: 320px;
+}
+.ul__div__li {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.ul__div__li__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.ul__div__meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.7rem;
+  padding: 5px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 250ms ease-in;
+}
+
+.ul__div__meta:hover {
+  transform: translateY(0px);
+  opacity: 0.8;
+}
+
+.ul__div__cancel {
+  position: absolute;
+  display: block;
+  background-color: #be8a62;
+  color: white;
+  right: -10px;
+  top: -8px;
+  border-radius: 50%;
+  border-style: none;
+  z-index: 10;
+  font-size: 1.2rem;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.dot--section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin: auto;
+  position: absolute;
+}
+.dot--section .dots span {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: #be8a62;
+  border-radius: 50%;
+  transform: rotate(calc(var(--i) * (360deg / 15))) translateY(35px);
+  animation: animate 0.8s linear infinite;
+  animation-delay: calc(var(--i) * 50ms);
+  opacity: 0;
+}
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1116px) {
+  .ul__div {
+    width: 250px;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .interest__lists__ul {
+    flex-wrap: wrap;
+  }
+}

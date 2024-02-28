@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poor+Story&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dc9280eb8c689eb3e423278b79ecff5a&libraries=services"
+    ></script>
+    <script type="module" src="../src/details.js" defer></script>
+    <script type="module" src="../src/main.js" defer></script>
+    <title>세부목록</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="header__container">
+        <img class="header__logo" src="../img/logo.png" alt="logo" />
+        <nav>
+          <ul class="header__nav">
+            <li class="header__nav__li"><a href="../index.html">Home</a></li>
+            <li class="header__nav__li">
+              <a href="./experience_list.html">체험목록</a>
+            </li>
+            <li class="header__nav__li">
+              <a href="./interest_list.html">관심목록</a>
+            </li>
+          </ul>
+          <a class="header__nav__menu">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <section>
+        <h2 class="title">세부목록</h2>
+      </section>
+      <hr style="margin-bottom: 3rem" />
+      <section>
+        <div class="details max-container">
+          <div class="details__div">
+            <img class="details__img" src="" alt="" />
+          </div>
+          <div class="details__contents">
+            <!-- 목록 -->
+            <ul class="details__contents__ul">
+              <li class="li__svcnm">제목</li>
+              <li class="li__detail">
+                <span class="li__span">기간</span>
+                <span class="li__svcopn">(SVCOPNBGNDT) ~ (SVCOPNENDDT)</span>
+              </li>
+              <li class="li__detail">
+                <span class="li__span">장소</span>
+                <span class="li__placenm">(PLACENM)</span>
+              </li>
+              <li class="li__detail">
+                <span class="li__span">연령</span>
+                <span class="li__usetgtinfo">(USETGTINFO)</span>
+              </li>
+              <li class="li__detail">
+                <span class="li__span">결제</span>
+                <span class="li__payatnm">(PAYATNM)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="details__btn">
+            <button class="details__btn__like">관심</button>
+            <a class="details__btn__link" href="" target="_blank">상세링크</a>
+          </div>
+        </div>
+      </section>
+      <section class="details__location max-container">
+        <h3 class="details__location__title">장소 위치</h3>
+        <div class="location__address__div"></div>
+        <div class="details__location__container" id="map"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>주소 : 서울특별시 서초구 서운로 220 6층 교육센터</p>
+      <p>대표자 : 강인섭</p>
+      <p>&copy All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

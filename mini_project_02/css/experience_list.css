@@ -1,0 +1,144 @@
+.title {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+main {
+  min-height: 600px;
+}
+
+.exp__container {
+  width: 350px;
+  margin: auto;
+}
+.exp__btns {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 3px;
+  margin-bottom: 3rem;
+}
+
+.exp__btns__btn {
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #be8a62;
+  border-radius: 4px;
+  height: 60px;
+}
+
+.exp__btns__btn.active {
+  background-color: #c4671f;
+}
+
+.exp__btns__btn:hover {
+  color: rgb(225, 225, 225);
+}
+.exp__btns__btn:active {
+  background-color: #d89d6f;
+}
+
+.exp__lists__ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ul__div {
+  position: relative;
+  width: 350px;
+  height: 320px;
+}
+
+.ul__div.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.ul__div__li {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.ul__div__li__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.ul__div__meta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.7rem;
+  padding: 5px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 250ms ease-in;
+}
+
+.ul__div__meta:hover {
+  transform: translateY(0px);
+  opacity: 0.8;
+}
+
+.dot--section {
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin-bottom: 2.5rem;
+}
+.dot--section .dots span {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: #be8a62;
+  border-radius: 50%;
+  transform: rotate(calc(var(--i) * (360deg / 15))) translateY(35px);
+  animation: animate 0.8s linear infinite;
+  animation-delay: calc(var(--i) * 50ms);
+  opacity: 0;
+}
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.footer.disable {
+  display: none;
+}
+
+@media screen and (max-width: 1116px) {
+  .ul__div {
+    width: 250px;
+    height: 220px;
+  }
+}

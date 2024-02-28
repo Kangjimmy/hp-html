@@ -1,3 +1,9 @@
+## IGNORE key
+key.json
+
+## IGNORE test file
+test.*
+
 node_modules/
 
 .env
