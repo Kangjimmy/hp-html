@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <style>
+      div {
+        display: flex;
+        width: 250px;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <hr />
+    <form method="post">
+      <div>
+        <label for="id">ID</label>
+        <input type="text" name="id" id="id" />
+      </div>
+      <div>
+        <label for="pw">PW</label>
+        <input type="password" name="pw" id="pw" />
+      </div>
+      <div>
+        <label for="pwCheck">PW Check</label>
+        <input type="password" name="pwCheck" id="pwCheck" />
+      </div>
+      <div>
+        <label for="region"></label>
+        <select name="region" id="region">
+          <option value="경기">경기</option>
+          <option value="강원">강원</option>
+          <option value="경상">경상</option>
+        </select>
+      </div>
+      <button>회원가입</button>
+    </form>
+  </body>
+</html>
