@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과 화면</title>
+  </head>
+  <body>
+    <h1>안녕하세요. <%= name %>입니다!</h1>
+    <% let emoji = ''; if (age >= 40) { emoji = '😌'; } else if (age >= 30) {
+    emoji = '😝'; } else if (age >= 20) { emoji = '😎'; } else if (age >= 10) {
+    emoji = '🤩'; } else { emoji = '🫠'; } %>
+    <h1>저는 <%= age %>살 입니다! <%= emoji %></h1>
+  </body>
+</html>

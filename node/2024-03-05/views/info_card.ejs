@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력 화면</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <form method="post" class="container">
+        <label for="name" hidden>이름</label>
+        <input
+          class="container__name"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="이름을 입력하세요"
+        />
+        <label for="age" hidden>나이</label>
+        <input
+          class="container__age"
+          type="text"
+          name="age"
+          id="age"
+          placeholder="나이를 입력하세요"
+        />
+        <button class="container__btn">전송</button>
+      </form>
+    </section>
+  </body>
+</html>
