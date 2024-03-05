@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연락처 관리하기</title>
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <i class="fa-solid fa-address-book icon"></i>
+      <h1>My Contacts</h1>
+    </header>
+    <main class="main__container">
+      <div class="contacts__div add">
+        <a href="./add">
+          <button class="add__btn">
+            <i class="fa-solid fa-user-plus"></i> 연락처 추가
+          </button>
+        </a>
+      </div>
+      <div class="contacts__div">
+        <ul class="contacts__ul title">
+          <li class="contacts__name">이름</li>
+          <li class="contacts__mail">메일 주소</li>
+          <li class="contacts__tel">전화번호</li>
+          <li class="contacts__trans">관리</li>
+        </ul>
+        <ul class="contacts__ul">
+          <li class="contacts__name">강인섭</li>
+          <li class="contacts__mail">kis@gmail.com</li>
+          <li class="contacts__tel">010-1234-5678</li>
+          <li class="contacts__manage">
+            <div class="manage__mod">
+              <i class="fa-solid fa-pencil"></i>
+            </div>
+            <div class="manage__del">
+              <i class="fa-solid fa-x"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
