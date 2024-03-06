@@ -73,6 +73,7 @@ section {
   padding: 1.2rem 3rem;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 100%;
 }
 .main__container {
   margin: 100px auto;
@@ -129,4 +130,27 @@ section {
 .manage__mod,
 .manage__del {
   cursor: pointer;
+}
+
+/* add */
+
+.contacts__add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+}
+
+.add__title {
+  font-size: 1.5rem;
+}
+
+/* .add__form {
+  margin: auto;
+} */
+.add__name__div {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
 }

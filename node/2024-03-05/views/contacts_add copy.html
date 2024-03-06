@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연락처 관리하기</title>
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <i class="fa-solid fa-address-book icon"></i>
+      <h1>My Contacts</h1>
+    </header>
+    <main class="main__container">
+      <div class="contacts__div add">
+        <a href="./add">
+          <button class="add__btn">
+            <i class="fa-solid fa-list"></i> 연락처 목록
+          </button>
+        </a>
+      </div>
+      <div class="contacts__add">
+        <p class="add__title">연락처 추가</p>
+        <form method="post" class="add__form">
+          <div class="add__name__div">
+            <label for="name">이름</label>
+            <input class="add__name" type="text" name="name" id="name" />
+          </div>
+          <div>
+            <label for="email">메일 주소</label><br />
+            <input type="text" name="email" id="email" />
+          </div>
+          <div>
+            <label for="tel">전화번호</label><br />
+            <input type="text" name="tel" id="tel" />
+          </div>
+          <button>저장하기</button>
+        </form>
+        <!-- <ul class="contacts__ul title">
+          <li class="contacts__name">이름</li>
+          <li class="contacts__mail">메일 주소</li>
+          <li class="contacts__tel">전화번호</li>
+          <li class="contacts__trans">관리</li>
+        </ul>
+        <ul class="contacts__ul">
+          <li class="contacts__name">강인섭</li>
+          <li class="contacts__mail">kis@gmail.com</li>
+          <li class="contacts__tel">010-1234-5678</li>
+          <li class="contacts__manage">
+            <div class="manage__mod">
+              <i class="fa-solid fa-pencil"></i>
+            </div>
+            <div class="manage__del">
+              <i class="fa-solid fa-x"></i>
+            </div>
+          </li>
+        </ul> -->
+      </div>
+    </main>
+  </body>
+</html>

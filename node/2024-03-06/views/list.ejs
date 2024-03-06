@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>List Page</h1>
+    <hr />
+    <section class="list__container">
+      <div class="btn__div">
+        <a href="/add">
+          <button class="add__btn">데이터 추가</button>
+        </a>
+      </div>
+      <table>
+        <tr class="title">
+          <th class="title__no">번호</th>
+          <th class="title__name">제목</th>
+          <th class="title__publisher">출판사</th>
+          <th class="title__price">가격</th>
+          <th class="title__mod">수정/삭제</th>
+        </tr>
+        <% data.forEach((item) => { %>
+        <tr>
+          <td class="title__no"><%= item.bookid %></td>
+          <td class="title__name"><%= item.bookname %></td>
+          <td class="title__publisher"><%= item.publisher %></td>
+          <td class="title__price"><%= item.price %></td>
+          <td class="title__mod">
+            <a href="/update/<%= item.bookid %>">
+              <button class="btn__mod">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </a>
+            <a href="/delete/<%= item.bookid %>">
+              <button class="btn__delete">
+                <i class="fa-solid fa-x"></i>
+              </button>
+            </a>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+    </section>
+  </body>
+</html>

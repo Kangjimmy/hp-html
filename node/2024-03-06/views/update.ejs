@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>추가</title>
+    <script
+      src="https://kit.fontawesome.com/4d584d86c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Update Page</h1>
+    <hr />
+    <section class="list__container">
+      <div class="btn__div">
+        <a href="/">
+          <button class="add__btn">목록</button>
+        </a>
+      </div>
+      <form method="post" class="update__form">
+        <label for="no">번호</label>
+        <input
+          type="number"
+          name="no"
+          id="no"
+          value="<%= data.bookid %>"
+          readonly
+        />
+        <label for="title">제목</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          value="<%= data.bookname %>"
+        />
+        <label for="publisher">출판사</label>
+        <input
+          type="text"
+          name="publisher"
+          id="publisher"
+          value="<%= data.publisher %>"
+        />
+        <label for="price">가격</label>
+        <input
+          type="number"
+          name="price"
+          id="price"
+          value="<%= data.price %>"
+        />
+        <button class="update__form__btn__mod">수정</button>
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn__div {
+  align-self: flex-end;
+  margin: 3rem 0 1rem 0;
+}
+.add__btn {
+  cursor: pointer;
+  background-color: #3e8ede;
+  color: white;
+  border-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.list__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1142px;
+  margin: auto;
+}
+table {
+  /* margin: 50px auto; */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid whitesmoke;
+  padding: 0.5rem 0;
+}
+th {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.title__no {
+  width: 100px;
+  text-align: center;
+}
+
+.title__name {
+  width: 500px;
+  padding: 0.5rem 1rem;
+}
+
+.title__publisher {
+  width: 200px;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.title__price {
+  width: 170px;
+  text-align: center;
+}
+
+.title__mod {
+  width: 150px;
+  text-align: center;
+  cursor: default;
+}
+
+.add__form,
+.update__form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.update__form label,
+.add__form label {
+  margin: 0.3rem 0;
+}
+.update__form input,
+.add__form input {
+  width: 400px;
+  height: 20px;
+  padding: 0.2rem 0.5rem;
+  outline: none;
+}
+
+.btn__delete,
+.btn__mod {
+  cursor: pointer;
+  background-color: transparent;
+  opacity: 0.5;
+  border: none;
+}
+
+.update__form__btn__mod,
+.add__form__btn__add {
+  cursor: pointer;
+  border-style: none;
+  background-color: #3e8ede;
+  color: white;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-radius: 4px;
+}
