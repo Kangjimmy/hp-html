@@ -2,7 +2,7 @@
 key.json
 
 ## IGNORE test file
-test.*
+test*.*
 
 node_modules/
 
