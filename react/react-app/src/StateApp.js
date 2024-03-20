@@ -11,6 +11,7 @@ import Pr01_02 from './components/05.state/Pr01_02';
 import Pr03 from './components/05.state/Pr03';
 import Pr04 from './components/05.state/Pr04';
 import Pr05 from './components/05.state/Pr05';
+import Counter from './components/05.state/Counter';
 
 export default function StateApp() {
   // state 끌어올리기
@@ -32,14 +33,15 @@ export default function StateApp() {
         <h3>ChildComponent로부터 전달받는 데이터 : {text}</h3>
         <ChildComponent onChangeText={changeTextHandler} />
       </div> */}
-      <Pr01_02 />
+      {/* <Pr01_02 />
       <hr />
       <Pr03 />
       <hr />
       <Pr04 />
       <hr />
       <Pr05 />
-      <hr />
+      <hr /> */}
+      <Counter />
     </div>
   );
 }
