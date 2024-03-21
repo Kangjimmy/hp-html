@@ -1,0 +1,10 @@
+$width: 400px;
+$height: 500px;
+
+.container {
+  border: 1px solid black;
+  width: $width;
+  height: $height;
+  background-image: url('./apple.webp');
+  background-size: cover;
+}

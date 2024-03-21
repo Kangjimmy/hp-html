@@ -1,0 +1,17 @@
+.containerNesting {
+  background-color: yellow;
+  border: 3px solid red;
+
+  ul {
+    list-style: none;
+
+    li {
+      color: red;
+      padding: 20px;
+
+      &:last-child {
+        color: green;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$primary-color: black;
+
+.container3 {
+  $primary-color: red !default;
+  background-color: $primary-color;
+}
+
+.hello {
+  color: $primary-color;
+}

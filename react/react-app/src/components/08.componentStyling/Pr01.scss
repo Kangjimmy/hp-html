@@ -1,0 +1,18 @@
+.pr01Container {
+  display: flex;
+  // min-width: 1600px;
+}
+
+$width: 50px;
+$colorList: red, orange, yellow, #4caf50, #1e88e5, #303f9f, #7b1fa2;
+@mixin setContainer($num) {
+  width: $width * $num;
+  height: $width * $num;
+}
+
+@for $i from 1 through 7 {
+  .pr01Container > div:nth-child(#{$i}) {
+    @include setContainer($i);
+    background-color: nth($colorList, $i);
+  }
+}
