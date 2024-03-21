@@ -3,3 +3,10 @@
   color: white;
   background-color: blue;
 }
+
+.pic {
+  background: url('./apple.webp');
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
