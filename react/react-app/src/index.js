@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import StateApp from './StateApp';
 import EventHookApp from './EventHookApp';
 import ComponentStylingApp from './ComponentStylingApp';
+import HooksApp from './HooksApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,8 @@ root.render(
   // </React.StrictMode>
   // <StateApp />
   // <EventHookApp />
-  <ComponentStylingApp />
+  // <ComponentStylingApp />
+  <HooksApp />
 );
 
 // If you want to start measuring performance in your app, pass a function

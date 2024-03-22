@@ -2,9 +2,13 @@
   display: flex;
   // min-width: 1600px;
 }
-
+$green: #4caf50;
+$blue: #1e88e5;
+$navy: #303f9f;
+$purple: #7b1fa2;
 $width: 50px;
-$colorList: red, orange, yellow, #4caf50, #1e88e5, #303f9f, #7b1fa2;
+$colorList: red, orange, yellow, $green, $blue, $navy, $purple;
+
 @mixin setContainer($num) {
   width: $width * $num;
   height: $width * $num;
