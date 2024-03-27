@@ -13,7 +13,10 @@ const memberSlice = createSlice({
     },
     deleteMember: (state, action) => {
       const id = action.payload;
-      state.members = state.members.filter((member) => member.id !== id);
+      // state.members = state.members.filter((member) => member.id !== id);
+      return {
+        members: state.members.filter((member) => member.id !== id),
+      };
     },
   },
 });
