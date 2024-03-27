@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { insertMember, test } from '../../features/member/memberSlice';
 const MemberInsert = () => {
-  const member = useSelector((state) => state.member);
+  const member = useSelector((state) => state.member.members);
   const dispatch = useDispatch();
 
   const nameRef = useRef();
