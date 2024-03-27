@@ -19,6 +19,10 @@ const MemberInsert = () => {
       return;
     }
 
+    nameRef.current.value = '';
+    ageRef.current.value = '';
+    regionRef.current.value = '수도권';
+
     dispatch(
       insertMember({
         name,
