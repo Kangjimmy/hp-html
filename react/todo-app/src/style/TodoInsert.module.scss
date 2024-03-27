@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+
+.insert {
+  border: none;
+  outline: none;
+  flex-basis: 1;
+  font-size: 1.05rem;
+  padding: 10px;
+  line-height: 20px;
+  flex-grow: 1;
+}
+
+.btn {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  cursor: pointer;
+}

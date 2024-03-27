@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+.memberContainer {
+  width: 700px;
+  margin: auto;
+}
+.insertContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: beige;
+}
+@mixin inputForm {
+  width: 220px;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 5px;
+}
+label {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.inputBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+#memberRegion,
+#memberAge,
+#memberName {
+  @include inputForm;
+}
+
+.insertBtn {
+  width: 120px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 8px;
+  background-color: pink;
+  padding: 5px 0;
+}
+
+.insertBtn:hover {
+  background-color: rgb(252, 158, 173);
+}
+
+.insertBtn:active {
+  background-color: rgba(255, 192, 203, 0.7);
+}
+
+.tableContainer {
+  margin-top: 1rem;
+}
+.table {
+  width: 100%;
+}
+.trRow {
+  color: white;
+  background-color: navy;
+}
+table,
+th,
+tr {
+  border: none;
+  border-collapse: collapse;
+}
+.thName {
+  width: 45%;
+}
+.thAge {
+  width: 20%;
+}
+.thRegion {
+  width: 20%;
+}
+.thDelete {
+  width: 15%;
+}
+
+td {
+  text-align: center;
+  padding: 2px 0;
+}
+
+.tbTr {
+  border-bottom: 2px solid grey;
+}
+
+.btnDelete {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 1.2rem;
+  transition: all 150ms linear;
+}
+.btnDelete:hover {
+  transform: scale(1.15);
+}

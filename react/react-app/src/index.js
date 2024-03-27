@@ -7,6 +7,12 @@ import StateApp from './StateApp';
 import EventHookApp from './EventHookApp';
 import ComponentStylingApp from './ComponentStylingApp';
 import HooksApp from './HooksApp';
+import ContextApp from './ContextApp';
+import { Provider } from 'react-redux';
+import store from './store/store.js';
+import store2 from './store/store2.js';
+import ReduxApp from './ReduxApp.js';
+import ReduxApp2 from './ReduxApp2.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +22,14 @@ root.render(
   // <StateApp />
   // <EventHookApp />
   // <ComponentStylingApp />
-  <HooksApp />
+  // <HooksApp />
+  // <ContextApp />
+  // <Provider store={store}>
+  //   <ReduxApp />
+  // </Provider>
+  <Provider store={store2}>
+    <ReduxApp2 />
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
