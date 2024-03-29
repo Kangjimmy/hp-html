@@ -13,6 +13,7 @@ import store from './store/store.js';
 import store2 from './store/store2.js';
 import ReduxApp from './ReduxApp.js';
 import ReduxApp2 from './ReduxApp2.js';
+import RouterApp from './RouterApp.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,9 +28,10 @@ root.render(
   // <Provider store={store}>
   //   <ReduxApp />
   // </Provider>
-  <Provider store={store2}>
-    <ReduxApp2 />
-  </Provider>
+  // <Provider store={store2}>
+  //   <ReduxApp2 />
+  // </Provider>
+  <RouterApp />
 );
 
 // If you want to start measuring performance in your app, pass a function
